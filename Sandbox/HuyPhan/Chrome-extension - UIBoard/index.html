@@ -1,0 +1,434 @@
+<!Doctype html>
+<html>
+	<head>
+    <script src="components/webcomponentsjs/webcomponents.js"></script>
+    
+    <!-- Optional theme -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  	<link rel="import" href="components/core-toolbar/core-toolbar.html">
+  	<link rel="import" href="components/core-header-panel/core-header-panel.html">
+  	<link rel="import" href="components/core-icons/core-icons.html">
+	<link rel="import" href="components/core-icons/editor-icons.html">
+	<link rel="import" href="components/core-icons/communication-icons.html">
+	<link rel="import" href="components/core-icons/social-icons.html">
+	<link rel="import" href="components/core-icon-button/core-icon-button.html">
+	<link rel="import" href="components/core-icons/av-icons.html">
+    <link rel="import" href="components/core-menu/core-menu.html">
+    <link rel="import" href="components/core-item/core-item.html">
+  	<link rel="import" href="components/paper-icon-button/paper-icon-button.html">
+	<link rel="import" href="components/paper-button/paper-button.html">
+    <link rel="import" href="components/paper-shadow/paper-shadow.html">
+	<link rel="import" href="components/paper-input/paper-input.html">
+    <link rel="import" href="components/paper-input/paper-autogrow-textarea.html">
+    <link rel="import" href="components/paper-input/paper-input-decorator.html">
+    <link rel="import" href="components/paper-button/paper-button.html">
+    <link rel="import" href="components/paper-slider/paper-slider.html">
+    <link rel="import" href="components/paper-progress/paper-progress.html">
+    <link rel="import" href="components/paper-checkbox/paper-checkbox.html">
+    <script src="js/jquery.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" type="text/less" href="css/style1.less">
+	<link rel="stylesheet" type="text/less" href="css/style.less">
+    <script src="js/less.min.js"></script>
+  </head>
+  <body>
+  <body fullbleed vertical layout unresolved>
+  <core-header-panel flex>
+    <core-toolbar id="mainheader">
+      <paper-icon-button id="menu-toggle" 
+        icon="menu"></paper-icon-button>
+      <span flex class="text-center boardname">My Board</span>
+      <paper-icon-button id="alarm" 
+        icon="alarm"></paper-icon-button>
+      <paper-icon-button id="searchbutton" 
+        icon="search"></paper-icon-button>
+      <paper-icon-button id="morevert" 
+        icon="more-vert"></paper-icon-button>
+    </core-toolbar>
+    <div id="wrapper" >
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+		<div class="info">
+			<img class="avatar" src="images/avt5.png">
+			<span class="name">Thanh Linh</span>
+		</div>
+		<div class="chooise-team">
+			<core-icon class="team-avatar" icon="social:group"></core-icon>
+			<span class="name">My team</span>
+		</div>
+		<div class="star-board">
+			<core-icon class="star-icon" icon="star"></core-icon>
+			<span class="name">Star board</span>
+		</div>
+		<div class="my-board">
+			<core-icon class="myboard-icon" icon="dashboard"></core-icon>
+			<span class="name">All board</span>
+		</div>
+		<div class="action">
+			<core-icon class="action-icon" icon="av:playlist-add"></core-icon>
+			<span class="name">Option</span>
+		</div>
+      </div>
+      <!-- Page content -->
+      <div id="page-content-wrapper">
+		<div id="board-wrapper">
+		<div class="col-xs-2" id="column" >
+              <div class="colum-header">
+              <p class="lead column-title">To Day</p>
+              <paper-icon-button id="column-action" 
+              icon="expand-more"></paper-icon-button>   
+              </div>
+              <div class="column-contain" id="col1">
+                <div class="card">
+                  <div class="card-top">
+					<div class="top-avatar">
+                    <img src="images/avt1.png">
+                    <img src="images/avt3.png">
+					<core-icon-button  icon="add"></core-icon-button>
+					</div>
+					<div class="time-count text-center">
+					<core-icon class="timestop" style="display: none" icon="av:stop"></core-icon>
+					<core-icon class="timeplay"icon="av:play-arrow"></core-icon>
+					<p style="display:none">04:22:24</p>
+					</div>
+					<div class="card-setting">
+					<core-icon id="column-action" 
+					icon="communication:call-made"></core-icon> 
+					</div>
+                  </div>
+                  <div class="card-content text-center">
+                     <span>
+                      Html UI Design
+                     </span>
+                  </div>
+                  <div class="card-bot">
+                    <div class="status">
+					<core-icon icon="editor:format-list-bulleted"></core-icon>
+					<p>5/10</p>
+					<core-icon icon="communication:chat"></core-icon>
+					<p>5</p>
+					<core-icon icon="editor:attach-file"></core-icon>
+					<p>1</p>
+					</div>
+					<p class="estimate">6</p>
+                  </div>
+                </div>
+				<div class="card">
+                  <div class="card-top">
+					<div class="top-avatar">
+                    <img src="images/avt2.png">
+                    <img src="images/avt3.png">
+					<core-icon-button  icon="add"></core-icon-button>
+					</div>
+					<div class="time-count text-center">
+					<core-icon icon="av:play-arrow"></core-icon>
+					<p style="display:none">04:22:24</p>
+					</div>
+					<div class="card-setting">
+					<core-icon id="column-action" 
+					icon="communication:call-made"></core-icon>
+					</div>
+                  </div>
+                  <div class="card-content text-center">
+                     <span>
+                      Jquery tutorial
+                     </span>
+                  </div>
+                  <div class="card-bot">
+                    <div class="status">
+					<core-icon icon="editor:format-list-bulleted"></core-icon>
+					<p>5/8</p>
+					<core-icon icon="communication:chat"></core-icon>
+					<p>3</p>
+					<core-icon icon="editor:attach-file"></core-icon>
+					<p>2</p>
+					</div>
+					<p class="estimate">4</p>
+                  </div>
+                </div>
+              </div>
+			  <div class="colum-bottom" id="add-card">
+				<paper-input label="Add a card"></paper-input>
+			  </div>
+            </div>
+            <div class="col-xs-2" id="column" class="col2">
+              <div class="colum-header">
+              <p class="lead column-title">To Do</p>
+              <paper-icon-button id="column-action" 
+              icon="expand-more"></paper-icon-button>   
+              </div>
+              <div class="column-contain" id="col2">
+			  <div class="card">
+                  <div class="card-top">
+					<div class="top-avatar">
+                    <img src="images/avt1.png">
+					<core-icon-button  icon="add"></core-icon-button>
+					</div>
+					<div class="time-count text-center">
+					<core-icon icon="av:play-arrow"></core-icon>
+					<p style="display:none">04:22:24</p>
+					</div>
+					<div class="card-setting">
+					<core-icon id="column-action" 
+					icon="communication:call-made"></core-icon>
+					</div>
+                  </div>
+                  <div class="card-content text-center">
+                     <span>
+                      Mockup Design
+                     </span>
+                  </div>
+                  <div class="card-bot">
+                    <div class="status">
+					<core-icon icon="editor:format-list-bulleted"></core-icon>
+					<p>1/5</p>
+					<core-icon icon="communication:chat"></core-icon>
+					<p>1</p>
+					<core-icon icon="editor:attach-file"></core-icon>
+					<p>1</p>
+					</div>
+					<p class="estimate">5</p>
+                  </div>
+                </div>
+              </div>
+			  <div class="colum-bottom" id="add-card">
+				<paper-input label="Add a card"></paper-input>
+			  </div>
+            </div>
+            <div class="col-xs-2" id="column" class="col3">
+              <div class="colum-header">
+              <p class="lead column-title">Review</p>
+              <paper-icon-button id="column-action" 
+              icon="expand-more"></paper-icon-button>   
+              </div>
+              <div class="column-contain" id="col3">
+              </div>
+			  <div class="colum-bottom" id="add-card">
+				<paper-input label="Add a card"></paper-input>
+			  </div>
+            </div>
+			<div class="add-column">
+			<paper-input  label="Add a column"></paper-input>
+			</div>
+		</div>
+		<div id="column-detail-wrapper" style="display:none">
+          <div class="row">
+            <div class="col-sm-4" id="column-card-left">
+                <div class="card-short">
+                  <div class="avatar">
+                    <img src="images/nhatphan.png" />
+                  </div>
+                  <div class="content">
+                    <div class="name-card">
+                      <h4>Javascrip trainning</h4>
+                    </div>
+                    <div class="description-card">
+                      <h5>Trainning about javascript for new intern. </h5>
+                    </div>
+                  </div>
+                  <div class="star">
+                    <core-icon-button icon="star">
+                    </core-icon-button>
+                  </div>
+                  <div class="time">
+                    12/10/2014
+                  </div>
+                </div>
+                <div class="card-short">
+                  <div class="avatar">
+                    <img src="images/nhatphan.png" />
+                  </div>
+                  <div class="content">
+                    <div class="name-card">
+                      <h4>Polymer project</h4>
+                    </div>
+                    <div class="description-card">
+                      <h5>Learning about polymer project. Use it for create customer element.</h5>
+                    </div>
+                  </div>
+                  <div class="star">
+                    <core-icon-button icon="star">
+                    </core-icon-button>
+                  </div>
+                  <div class="time">
+                    12/12/2014
+                  </div>
+                </div>
+				<div class="card-short">
+                  <div class="avatar">
+                    <img src="images/khoanguyen.png" />
+                  </div>
+                  <div class="content">
+                    <div class="name-card">
+                      <h4>Html5</h4>
+                    </div>
+                    <div class="description-card">
+                      <h5>Trainning html5. Use indexeddb for save database in client.</h5>
+                    </div>
+                  </div>
+                  <div class="star">
+                    <core-icon-button icon="star">
+                    </core-icon-button>
+                  </div>
+                  <div class="time">
+                    12/14/2014
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-6" id="column-card-right">
+              <div class="details-card">
+                <div class="details-card-header-title">
+                  <div class="details-card-header-title-member">
+                    <div class="details-card-header-label">
+                      <h5>Member</h5>
+                    </div>
+                    <div class="avatar-member-card-avatar">
+                      <img src="images/nhatphan.png" />
+                      <img src="images/khoanguyen.png" />
+                      <img src="images/huyphan.png" />
+					  <img src="images/linhphung.png" />
+                    </div>
+                    <div class="avatar-member-card-button-add">
+                      <core-icon-button  icon="add">
+                      </core-icon-button>
+                    </div>
+                  </div>
+                  <div class="details-card-time">
+                    <div class="details-card-time-timer">
+                      <h5>Timer</h5>
+                    </div>
+                    <div class="details-card-time-text">
+                      <h4>03:55:17</h4>
+                    </div>
+                    <div class="details-card-time-button">
+                      <core-icon icon="av:pause">
+                      </core-icon>
+                    </div>
+					<div class="details-card-time-stop-button">
+                      <core-icon icon="av:stop">
+                      </core-icon>
+                    </div>
+                  </div>
+                  <div class="details-card-time-star">
+                    <core-icon-button icon="star">
+                    </core-icon-button>
+                  </div>
+                </div>
+                <div class="details-card-name-edit">
+                  <div class="details-card-icon-name">
+                    <div class="details-card-icon">
+                      <core-icon icon="dashboard"></core-icon>
+                    </div>
+                    <div class="details-card-name">
+                      <h4>Javascrip Trainning</h4>
+                    </div>
+                  </div>
+                  <div class="details-card-edit-name-hide-on">
+                    <paper-input-decorator label="this is task's name" layout="" vertical="">
+                      <input is="core-input" placeholder="" aria-label="">
+                    </paper-input-decorator>
+                    <paper-button raised="" class="button-save-name" role="button" tabindex="0">Save</paper-button>
+                    <paper-button raised="" class="button-cancel-name" role="button" tabindex="0">Cancel</paper-button>
+                  </div>
+                </div>
+                <div class="details-card-description">
+                  <h5>Description</h5>
+                  <div class="details-card-description-text">
+                    <h4>Trainning javascript for new intern.</h4>
+                  </div>
+                  <div class="details-card-description-edit-hide-on">
+                    <paper-input-decorator class="description-edit" label="Description" floatinglabel="" layout="" vertical="">
+                      <paper-autogrow-textarea>
+                        <textarea placeholder="Description" aria-label="Description"></textarea>
+                      </paper-autogrow-textarea>
+                    </paper-input-decorator>
+                    <paper-button raised="" class="save-description" role="button" tabindex="0">Save</paper-button>
+                    <paper-button raised="" class="cancel-description" role="button" tabindex="0">Cancel</paper-button>
+                  </div>
+                </div>
+                <div class="details-card-checklist">
+                  <div class="details-card-activity">
+                    <div class="details-card-activity-icon-name">
+                      <div class="details-card-activity-icon">
+                        <core-icon icon="list"></core-icon>
+                      </div>
+                      <div class="details-card-activity-name">
+                        <h4>CheckList</h4>
+                      </div>
+                    </div>
+					<div class="details-card-checklist-edit-hide-on">
+						<paper-input-decorator class="checklist-edit" label="Checklist" floatinglabel="" layout="" vertical="">
+						<paper-autogrow-textarea>
+							<textarea placeholder="CheckList" aria-label="CheckList"></textarea>
+						</paper-autogrow-textarea>
+						</paper-input-decorator>
+						<paper-button raised="" class="save-checklist" role="button" tabindex="0">Save</paper-button>
+						<paper-button raised="" class="cancel-checklist" role="button" tabindex="0">Cancel</paper-button>
+					</div>
+                    <div class="details-card-checklist-percent-lable-process">
+                      <div class="details-card-checklist-percent-lable">
+                        <h5>40%</h5>
+                      </div>
+                      <div class="details-card-checklist-process">
+                        <paper-progress value="40"></paper-progress>
+                      </div>
+                    </div>
+                    <div class="details-card-checklist-checkbox-list">
+                      <div class="details-card-checklist-checkbox">
+                        <paper-checkbox></paper-checkbox>
+                      </div>
+                      <div class="details-card-checklist-list">
+                        <h5>Understand about struct, var, handler,...</h5>
+                      </div>
+                    </div>
+                    <div class="details-card-checklist-checkbox-list">
+                      <div class="details-card-checklist-checkbox">
+                        <paper-checkbox></paper-checkbox>
+                      </div>
+                      <div class="details-card-checklist-list">
+                        <h5>Use javascript to action listenner click of object.</h5>
+                      </div>
+                    </div>
+					<paper-input label="Add an item" class="additemchecklist"></paper-input>
+                  </div>
+                </div>
+                <div class="details-card-activity">
+                  <div class="details-card-activity-icon-name">
+                    <div class="details-card-activity-icon">
+                      <core-icon icon="speaker-notes"></core-icon>
+                    </div>
+                    <div class="details-card-activity-name">
+                      <h4>Activity</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="details-card-comment">
+                  <div class="details-card-comment-header">
+                    <div class="details-card-comment-avatar">
+                      <img src="images/huyphan.png" />
+                    </div>
+                    <div class="details-card-comment-write">
+                      <div class="details-card-comment-textarea">
+                        <paper-input-decorator class="" label="Comment" floatinglabel="" layout="" vertical="">
+                          <paper-autogrow-textarea>
+                            <textarea placeholder="Comment" aria-label="Comment"></textarea>
+                          </paper-autogrow-textarea>
+                        </paper-input-decorator>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+		  <div class="col-sm-2" id="announcation">	
+		  </div>
+      </div>
+	  </div>
+    </div>
+  </core-header-panel>
+</body>
+</html>

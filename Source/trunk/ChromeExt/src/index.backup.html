@@ -1,0 +1,177 @@
+﻿<!Doctype html>
+<html>
+<head>
+	<script src="components/webcomponentsjs/webcomponents.js"></script>
+	<!-- Optional theme -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="import" href="components/core-toolbar/core-toolbar.html">
+	<link rel="import" href="components/core-header-panel/core-header-panel.html">
+	<link rel="import" href="components/core-icons/core-icons.html">
+	<link rel="import" href="components/core-icons/editor-icons.html">
+	<link rel="import" href="components/core-icons/communication-icons.html">
+	<link rel="import" href="components/core-icons/social-icons.html">
+	<link rel="import" href="components/core-icon-button/core-icon-button.html">
+	<link rel="import" href="components/core-icons/av-icons.html">
+	<link rel="import" href="components/core-menu/core-menu.html">
+	<link rel="import" href="components/core-dropdown-menu/core-dropdown-menu.html">
+	<link rel="import" href="components/core-item/core-item.html">
+	<link rel="import" href="components/paper-icon-button/paper-icon-button.html">
+	<link rel="import" href="components/paper-button/paper-button.html">
+	<link rel="import" href="components/paper-shadow/paper-shadow.html">
+	<link rel="import" href="components/paper-input/paper-input.html">
+	<link rel="import" href="components/paper-button/paper-button.html">
+	<link rel="import" href="components/paper-shadow/paper-shadow.html">
+	<link rel="import" href="components/paper-input/paper-input.html">
+	<link rel="import" href="components/paper-input/paper-autogrow-textarea.html">
+	<link rel="import" href="components/paper-input/paper-input-decorator.html">
+	<link rel="import" href="components/paper-button/paper-button.html">
+	<link rel="import" href="components/paper-slider/paper-slider.html">
+	<link rel="import" href="components/paper-progress/paper-progress.html">
+	<link rel="import" href="components/paper-checkbox/paper-checkbox.html">
+	<link rel="stylesheet" type="text/less" href="css/default.less">
+
+
+	<script type="text/javascript" src="config.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="js/Pageload.js"></script>
+	<script type="text/javascript" src="js/Account.index.js"></script>
+	<script type="text/javascript" src="js/Board.gui.js"></script>
+	<script type="text/javascript" src="js/Board.action.js"></script>
+	<script type="text/javascript" src="js/Board.Index.js"></script>
+	<script type="text/javascript" src="js/Column.gui.js"></script>
+	<script type="text/javascript" src="js/Column.action.js"></script>
+	<script type="text/javascript" src="js/Column.Index.js"></script>
+	<script type="text/javascript" src="js/Card.gui.js"></script>
+	<script type="text/javascript" src="js/Card.action.js"></script>
+	<script type="text/javascript" src="js/Card.Index.js"></script>
+	<script type="text/javascript" src="js/ColumnSetting.gui.js"></script>
+	<script type="text/javascript" src="js/ColumnSetting.action.js"></script>
+	<script type="text/javascript" src="js/ColumnSetting.Index.js"></script>
+	<script type="text/javascript" src="js/RightPanel.gui.js"></script>
+	<script type="text/javascript" src="js/RightPanel.Index.js"></script>
+	<script type="text/javascript" src="js/Displaying.js"></script>
+	<script type="text/javascript" src="js/Login.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/less.min.js"></script>
+</head>
+<body fullbleed vertical layout unresolved>
+
+	<core-header-panel flex>
+		<core-toolbar id="mainheader">
+			<paper-icon-button id="menu-toggle" icon="menu"></paper-icon-button>
+			<input flex class="text-center boardname" id="" value="My Board"></input>
+			<paper-icon-button id="timer" icon="alarm"></paper-icon-button>
+			<paper-icon-button id="search" icon="search"></paper-icon-button>
+			<div class="pull-right">
+				<paper-icon-button id="more-option" class="dropdown-toggle" data-toggle="dropdown" icon="more-vert"></paper-icon-button>
+				<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu">
+					<li><a id="show-dialog-columnSetting" href="#">Column Setting</a></li>
+					<li><a href="#">Delete Board</a></li>
+				</ul>
+			</div>
+		</core-toolbar>
+
+		<div id="main">
+			<!-- Sidebar -->
+			<div id="sidebar-menu">
+				<div class="info">
+					<paper-icon-button class="account-box" icon="account-box"></paper-icon-button>
+					<!--
+					<img class="avatar" src="images/avt5.png">
+					<span class="name">Thanh Linh</span>
+					-->
+					<div class="menu-content">
+						<div class="account-info"></div>
+						<paper-button class="login-btn text-center">Login</paper-button>
+					</div>
+				</div>
+				<!--
+				<div class="chooise-team">
+						<core-icon class="team-avatar" icon="social:group"></core-icon>
+						<span class="name">My team</span>
+				</div>
+				<div class="star-board">
+						<core-icon class="star-icon" icon="star"></core-icon>
+						<span class="name">Star board</span>
+				</div>
+				 -->
+				<div class="my-board">
+					<div class="my-board-title">
+						<core-icon class="myboard-icon" icon="dashboard"></core-icon>
+						<span class="name">All board</span><br />
+					</div>
+					<div class="menu-content">
+						<ul class="all-board-list"></ul>
+					</div>
+				</div>
+				<div class="action">
+					<paper-button class="create-board-btn text-center">Create New Board</paper-button>
+				</div>
+				
+			</div>
+			<!-- Main content -->
+			<div id="main-content">
+			</div>
+		</div>
+	</core-header-panel>
+
+	<div id="hide-div" style="display: none">
+		<!--Account info-->
+		<div id="uinfo">
+			<span class="uname"></span>
+			<br />
+			<span class="umail"></span>
+			<br />
+			<a href="#" >Account</a>
+			-
+			<a href="#" class="logout-btn">Logout</a>
+		</div>
+		<!-- Board: Add Column -->
+		<div id="add-column">
+			<paper-input class="add-column-input" label="Add a column"></paper-input>
+		</div>
+		<!-- Install Column Panel -->
+		<div id="install-column-panel">
+			<div class="install-board-description">
+				<img class="create-board-icon" src="./images/scrum-icon.png" />
+				<div class="create-board-description">
+					<span>
+						A Scrum board is a board that was created using the "Scrum" preset.<br />
+						Scrum boards are for teams that plan their work in sprints.<br />
+						A Scrum board is visible in both Plan mode and Work mode.
+					</span>
+				</div>
+				<paper-button id="install-scrum-board">Install Now</paper-button>
+			</div>
+			<br />
+			<div class="install-board-description">
+				<img class="create-board-icon" src="./images/issue-icon.png" />
+				<div class="create-board-description">
+					<span>Create issue board for follow your work</span>
+				</div>
+				<paper-button id="install-issue-board">Install Now</paper-button>
+			</div>
+			<br />
+			<div class="install-board-description">
+				<img class="create-board-icon" src="./images/custom-icon.png" />
+				<div class="create-board-description">
+					<span>Create your board with anthing you want</span>
+				</div>
+				<paper-button id="install-custom-board">Install Now</paper-button>
+			</div>
+		</div>
+		<!--Column Setting dialog-->
+		<div id="dialog-columnSetting" style="display:none" title="Column Setting">
+			<div class="dialog">
+			</div>
+		</div>
+		<!--Column Setting dialog-->
+		<div id="notification-dialog" title="Notification">
+			<div class="dialog-content">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

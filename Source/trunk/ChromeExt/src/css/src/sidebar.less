@@ -1,0 +1,255 @@
+﻿
+#sidebar {
+	width: 55px;
+	min-width: 51px;
+
+	#account{
+		paper-icon-button{
+			margin: 2px;
+		}
+		.uavatar{
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				padding: @gutterWidth;
+		}
+	}
+
+	.account-info, .login-btn{
+		display: none;
+	}
+	#gb_loged{
+		display: none;
+	}
+
+	.account-icon{
+		padding: @gutterWidth;
+	}
+
+	.private-board-icon, .my-team-icon{
+		margin: 0 @gutterWidth @gutterWidth 12px;
+	}
+
+	.private-board-title-text, .my-team-title-text{
+		display: none;
+	}
+	.show-all-board, .upgrade-btn{
+		display: none;
+	}
+	.private-board-content, .my-team-content{
+		display: none;
+	}
+
+	.create-board-btn{
+		display: none;
+		background-color: @createBoardButtonBg;
+	}
+}
+
+#sidebar.active {
+	width: 357px;
+	min-width: 289px;
+	#account {
+		background: @accountBg;
+		padding: @gutterWidth @gutterWidth 0px @gutterWidth;
+		border-bottom: 1px solid @boderBotColor;
+		.uavatar{
+				display: inline-block;
+				float:left;
+				width: 35px;
+				height: 35px;
+				padding: 0px;
+				border-radius: 50%;
+		}
+		.account-info.loged {
+			display: inline-block;
+
+			.uinfo{
+				display: inline-block;
+				float:left;
+				margin-left: 5px;
+				width: 185px;
+				.uname{
+					font-weight: bold;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					white-space: nowrap;
+				}
+				span.umail{
+					display: block;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					white-space: nowrap;
+				}
+			}
+		}
+
+		.login-btn{
+			display: block;
+			background-color: @loginButton;
+			margin-bottom: @gutterWidth;
+			color: @loginBtnColor;
+		}
+
+		.account-icon{
+			display: none;
+		}
+
+	}
+
+	#gb_loged{
+		padding: @gutterWidth @gutterWidth+5 @gutterWidth @gutterWidth;
+		border-bottom: 1px solid @boderBotColor;
+		.logout-btn{
+			float: right;
+			width: 100px;
+		}
+	}
+
+	#my-team{
+		padding: @gutterWidth;
+		border-bottom: 1px solid @boderBotColor;
+
+		.my-team-title{
+			display:inline-block;
+			width: 100%;
+			padding-bottom: @gutterWidth;
+			padding-right: 5px;
+			border-bottom: 1px solid @boderBotColor;
+		}
+
+		.my-team-icon{
+			margin: 0 @gutterWidth 0 0;
+			float: left;
+		}
+
+		.my-team-title-text{
+			display: inline-block;
+			font-size: 20px;
+			line-height: 24px;
+		}
+
+		.upgrade-btn{
+			display:inline-block;
+			float: right;
+		}
+
+		ul.my-team-list {
+		margin-left: 0px;
+		width: 100%;
+		overflow-y: auto;
+		max-height: 300px;
+		padding-left: 0px;
+		padding-top: 5px;
+		}
+
+		.team-item-menu {
+		display: inline-block;
+		border-bottom: 1px solid @boderColor;
+		height: 40px;
+		width: 100%;
+		padding-left: 13px;
+		padding-bottom: 45px;
+			paper-icon-button {
+			display: inline-block;
+			height: 40px;
+			}
+		}
+
+		.team-name-menu-item {
+		display: inline-block;
+		float: left;
+		line-height: 40px;
+		color: #000;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 130px;
+		}
+	}
+
+	#private-board{
+		padding: 2px @gutterWidth @gutterWidth @gutterWidth;
+		border-bottom: 1px solid @boderBotColor;
+
+		.private-board-title{
+			display:inline-block;
+			width: 100%;
+			padding-bottom: @gutterWidth;
+			border-bottom: 1px solid @boderBotColor;
+		}
+
+		.private-board-icon{
+			margin: 8px @gutterWidth 0px 0px;
+			float: left;
+		}
+
+		.private-board-title-text{
+			margin-top: 8px;
+			display: inline-block;
+			font-size: 20px;
+			line-height: 24px;
+		}
+		.show-all-board{
+			display:inline-block;
+			float: right;
+			margin-right: 2px;
+		}
+
+		.private-board-content{
+		display: block;
+		}
+
+		ul.private-board-list {
+		margin-left: 0px;
+		width: 100%;
+		overflow-y: auto;
+		max-height: 300px;
+		padding-left: 0px;
+		padding-top: 5px;
+		}
+
+		.board-item-menu {
+		display: inline-block;
+		border-bottom: 1px solid @boderColor;
+		height: 40px;
+		width: 100%;
+		padding-left: 13px;
+		padding-bottom: 45px;
+			paper-icon-button {
+			display: inline-block;
+			height: 40px;
+			}
+		}
+
+		.start-board-icon {
+		float: left;
+		}
+
+		.board-name-menu-item {
+		display: inline-block;
+		float: left;
+		line-height: 40px;
+		color: #000;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 130px;
+		opacity: .8;
+		}
+		.board-name-menu-item:hover{
+			opacity: 1;
+		}
+	}
+
+	
+
+	.create-board-btn{
+		display: block;
+		margin: @gutterWidth;
+		color: @createBoardButton;
+		border: 1px solid @boderBotColor;
+		box-shadow: inset 0 0 10px #eee;
+	}
+	
+}

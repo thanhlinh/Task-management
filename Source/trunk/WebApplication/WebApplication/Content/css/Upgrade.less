@@ -1,0 +1,62 @@
+﻿@bodyBgolor: #FAFAFA;
+@wordColor: #64B5F6;
+@bgColorButton: #d9534f;
+@bgMainContent: #F5F5F5;
+@borderColor: #EEEEEE;
+
+body {
+    font-family: Roboto;
+    background-color: @bodyBgolor;
+}
+
+
+.wrapper {
+    height: 100%; 
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+
+.top-wrapper {
+    width: 100%; height: 70px;
+	border-bottom: 1px solid @borderColor;
+	position: relative;
+}
+
+
+.main-wrapper {
+	background-color: @bgMainContent;
+    padding: 20px;
+}
+
+
+
+/*---------  title  ----------*/
+.title-content {
+	position: absolute;
+	left: 20px; top: 0px;
+}
+
+
+.title-content h3{
+    color: @wordColor;
+}
+
+/*--------------------------*/
+
+.lorem-content p{
+	text-align: justify;
+	text-indent: 10px;
+}
+
+.button-wrapper {
+	text-align: center;
+	padding: 10px 0px;
+}
+
+.btn-upgrade {
+	width: 80%;
+	height: 30px;
+	border-radius: 5px;
+	background-color: @bgColorButton;
+}

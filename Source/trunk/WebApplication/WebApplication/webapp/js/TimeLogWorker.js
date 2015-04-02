@@ -1,0 +1,3 @@
+﻿var TimerWoker = function (cardId) {
+
+}

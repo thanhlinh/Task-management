@@ -1,0 +1,62 @@
+{
+	"name": "TaskManagement",
+	"manifest_version": 2,
+	"version": "1.0",
+	"description": "The my board of project",
+	"icons": {
+		"default_icon": "images/icon.png"
+	},
+
+	"author": "Tony's Team",
+	"background": {
+		"scripts": [
+			"js/jquery.js",
+			"config.js",
+			"indexeddb.js",
+			"background.js",
+			"js/md5.js",
+			"js/background.content.hook.js",
+			"js/Account.background.js",
+			"js/ColumnSetting.js",
+			"js/ColumnSetting.background.js",
+			"js/ColumnSetting.data.js",
+			"js/Board.js",
+			"js/Board.background.js",
+			"js/Board.data.js",
+			"js/Board.sync.js",
+			"js/Column.js",
+			"js/Column.background.js",
+			"js/Column.data.js",
+			"js/Card.js",
+			"js/Card.background.js",
+			"js/Card.data.js",
+			"js/TimeLog.data.js"
+		]
+	},
+
+	"chrome_url_overrides": {
+		"newtab": "index.html"
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["http://*/ws/*", "https://*/ws/*"],
+			"js": [
+				"js/jquery.js",
+				"config.js",
+				"index.js",
+				"content.js"
+			]
+		}
+	],
+
+	"permissions": [
+		"tabs",
+		"http://*/*",
+		"https://*/*",
+		"webRequest",
+		"webRequestBlocking"
+	],
+
+	"content_security_policy": "script-src http://localhost 'self' 'unsafe-eval'; object-src 'self'"
+}

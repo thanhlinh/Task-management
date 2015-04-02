@@ -1,0 +1,324 @@
+@toolbarBgColor: #3F51B5; /*Indigo 500*/
+@sidebarBgColor: #FFFFFF; /*Brown 50*/
+@cardWidth : 95%;
+@cardMaxHeight : 150px;
+@cardMinHeight: 150px;
+@cardBgColor: #FFFFFF; /*Ember 500*/
+@columnBgColor: #EEEEEE; /*Grey 200*/
+@columnMinWidth: 300px;
+@columnMaxHeight: 870px;
+@columnContainMaxHeight: 810px;
+@pagecontentBgColor: #C5CAE9; /*idigo 100*/
+@minPagecontenHeight: 915px;
+@shadowColor: #E0E0E0;
+
+body {
+    font-family: Roboto;
+}
+
+core-toolbar {
+  background-color: @toolbarBgColor;
+}
+.boardname, core-toolbar  paper-icon-button{
+	color: #fff;
+}
+
+/*----------------------------
+-------menu wrap--------------
+----------------------------*/
+#wrapper {
+    padding-left: 59px;
+    transition: all .4s ease 0s;
+	transition: 0.2s;
+}
+#page-content-wrapper {
+    background-color: @pagecontentBgColor;
+    padding-left: 0;
+    margin-left: 0;
+    width: auto;
+    height: 100%;
+    min-height:  @minPagecontenHeight;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+#wrapper.active {
+    padding-left: 150px;
+}
+#wrapper.active #sidebar-wrapper {
+    left: 150px;
+}
+#page-content-wrapper {
+  width: 100%;
+}
+#wrapper.active {
+    padding-left: 286px;
+	transition: 0.2s;
+}
+#wrapper.active #sidebar-wrapper {
+    left: 150px;
+    width: 300px;
+    transition: all .4s ease 0s;
+	transition: 0.2s;
+}
+/*----------------------------
+-------main content--------------
+----------------------------*/
+
+/*----------------------------
+-------column design--------------
+----------------------------*/
+#column {
+	position: relative;
+    background: @columnBgColor;
+    box-sizing: border-box;
+    min-width: @columnMinWidth;
+    max-height: @columnMaxHeight;
+    box-shadow: 1px 2px 5px @shadowColor;
+    margin: 20px 10px 20px 10px;
+    border-radius: 2%;
+    height: 100%;
+    padding: 10px 0px 10px 10px; 
+}
+.column-contain {
+	height: 100%;
+	max-height: @columnContainMaxHeight;
+    width: 100%;
+    overflow:auto;
+    overflow-x:hidden;
+    padding-right: 0px;
+	padding-bottom: 10px;
+}
+.column-title {
+    float: left;
+    margin-top: 5px;
+}
+#column-action {
+    float: right;
+}
+.colum-bottom {
+	
+}
+.add-column paper-input{
+	margin-top: 20px;
+	margin-left: 10px;
+	background: @columnBgColor;
+	padding: 5px;
+	border-radius: 2%;
+}
+.add-column {
+	float: left;
+}
+/*----------------------------
+-------scroll design--------------
+----------------------------*/
+::-webkit-scrollbar {
+    width: 14px;
+    height: 18px;
+}
+::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    -webkit-border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+/*----------------------------
+-------card design--------------
+----------------------------*/
+.card {
+    padding: 5px;
+    background-color: @cardBgColor;
+    width: @cardWidth;
+    height: 100%;
+	min-height: @cardMinHeight;
+    margin: 10px 10px 0px 5px;
+    border-radius: 3%;
+}
+.card-top, .card-content, .card-bot {
+    width: 100%;
+}
+.card-top .top-avatar img {
+    border-radius: 50%;
+}
+.card-top .top-avatar, .card-top .time-count {
+	width: 45%;
+	display: inline-block;
+	float: left;
+}
+.card-top .card-setting {
+	width: 10%;
+	display: inline-block;
+	float: left;
+}
+.card-setting paper-icon-button {
+	padding: 0px;
+}
+.card-top .time-count, .card-top .time-count p, .card-top .time-count core-icon {
+	padding : 0px;
+	display: inline-block;
+}
+.time-count p{
+	float: right;
+	font-size: 16px;
+    margin-bottom: 0px;
+	
+}
+.time-count core-icon {
+	padding: 0px;
+	float: right;
+}
+.card-top {
+	display: inline-block;
+	padding-bottom: 5px;
+	border-bottom: #eee solid 1px;
+}
+.colum-bottom{
+	margin-top: 10px;
+}
+.colum-bottom paper-input {
+	margin-left: 5px;
+	width: 95%;
+	padding: 5px;
+	background: #fff;
+	border-radius: 3%;
+}
+.card-content {
+	height : 80px;
+	padding: 5px 30px 5px 10px;
+    margin: 5px 5px 10px 10px;
+    font-size: 16px;
+}
+.card-bot {
+	border-top : #eee solid 1px;
+	height : 30px;
+    position: relative;
+}
+.card-bot .status{
+	display: inline-block;
+    position : absolute;
+    bottom: -10px;
+    left: 5px;
+}
+.card-bot .status p, .card-bot .status core-icon {
+	margin-right: 1px;
+	display: inline-block;
+	float: left;
+	font-size: 12px;
+	padding-bottom: 1px;
+}
+.card-bot .status p {
+	line-height: 24px;
+}
+.card-bot .status core-icon {
+	margin-left: 5px;
+}
+.card-bot .estimate{
+    position : absolute;
+    bottom: -15px;
+    right: -5px;
+	border-left : #000 solid 1px;
+	border-top : #000 solid 1px;
+	border-top-left-radius: 7px;
+	padding: 2px 5px 5px 5px;
+}
+/*----------------------------
+-------sidebar design--------------
+----------------------------*/
+#sidebar-wrapper {
+    margin-left: -164px;
+    left: -78px;
+    width: 300px;
+    background: @sidebarBgColor;
+    position: fixed;
+    height: 100%;
+    z-index: 10000;
+    transition: all .4s ease 0s;
+    box-shadow: inset 0 0 10px #EEEEEE;
+	transition: 0.2s;
+}
+#sidebar-wrapper .info, #sidebar-wrapper .chooise-team, #sidebar-wrapper .star-board,
+#sidebar-wrapper .my-board, #sidebar-wrapper .action {
+	margin: 15px 5px 5px 5px;
+	padding: 5px;
+	width: 100%;
+}
+#sidebar-wrapper .info, .info .avatar,
+#sidebar-wrapper .chooise-team , .chooise-team .team-avatar,
+#sidebar-wrapper .star-board, .star-board .star-icon,
+#sidebar-wrapper .my-board, .my-board .myboard-icon,
+#sidebar-wrapper .action, .action .action-icon
+{
+	display: inline-block;
+	float: right;
+	transition: 0.2s;
+}
+.info .avatar  {
+	height: 30px;
+	width: 30px;;
+	border-radius: 50%;
+}
+.info .name, .chooise-team .name, .star-board .name, .my-board .name, .action .name {
+	display: none;
+	line-height: 30px;
+	margin-left: 10px;
+	font-size: 20px;
+}
+.chooise-team core-icon, .star-board core-icon, .my-board core-icon, .action core-icon{
+	width: 30px;
+    height: 30px;
+}
+#page-content-wrapper paper-button {
+	margin: 20px 10px 20px 10px;
+	height: 100%;
+	background-color: #9FA8DA; /*idigo 200*/
+}
+/*----------------------------
+-------sidebar active--------------
+----------------------------*/
+#sidebar-wrapper .info.active, .info.active .avatar,.info.active .name,
+#sidebar-wrapper .chooise-team.active , .chooise-team.active .team-avatar,.chooise-team.active .name,
+#sidebar-wrapper .star-board.active, .star-board.active .star-icon, .star-board.active .name,
+#sidebar-wrapper .my-board.active, .my-board.active .myboard-icon, .my-board.active .name,
+#sidebar-wrapper .action.active, .action.active .action-icon, .action.active .name
+{
+	margin-left: 10px;
+	display: inline-block;
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

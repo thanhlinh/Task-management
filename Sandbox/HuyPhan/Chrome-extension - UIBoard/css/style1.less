@@ -1,0 +1,324 @@
+@toolbarBgColor: #03A9F4; /*Light Blue 500*/
+@sidebarBgColor: #EFEBE9; /*Brown 50*/
+@columnBgColor: #CFD8DC; /*Blue Grey 100*/
+@cardWidth : 250px;
+@cardMinHeight: 150px;
+@cardBgColor: white;
+@paperBgColor: #FAFAFA;
+@columnMinWidth: 300px;
+@detailsBgColor: #FAFAFA;
+@buttonBgColor: #2E7D32;
+@starbuttonColor: #FBC02D;
+@processColor: #03A9F4;
+
+body{
+   font-family: roboto; 
+}
+core-toolbar {
+  background-color: @toolbarBgColor;
+}
+span flex{
+	margin-left: auto;
+    margin-right: auto;
+}
+/*----------------------------
+-------menu wrap--------------
+----------------------------*/
+#wrapper {
+    padding-left: 70px;
+    transition: all .4s ease 0s;
+}
+#sidebar-wrapper {
+    margin-left: -150px;
+    left: -78px;
+    width: 300px;
+    background: @sidebarBgColor;
+    position: fixed;
+    height: 100%;
+    z-index: 10000;
+    transition: all .4s ease 0s;
+}
+#page-content-wrapper {
+    background-color: @paperBgColor;
+    padding-left: 10px;
+    width: 100%;
+    height: 900px;
+    overflow-x: auto;
+    overflow-x: hidden;
+}
+#wrapper.active {
+    padding-left: 150px;
+}
+#wrapper.active #sidebar-wrapper {
+    left: 150px;
+}
+#wrapper.active {
+    padding-left: 300px;
+}
+#wrapper.active #sidebar-wrapper {
+    left: 150px;
+    width: 300px;
+    transition: all .4s ease 0s;
+}
+/*----------------------------
+-------main content--------------
+----------------------------*/
+
+/*----------------------------
+-------column design--------------
+----------------------------*/
+.row {
+    display : flex;
+}
+#column-card-left {
+    margin-left: 12px;
+    padding: 2px 2px 2px 1px;
+    background-color: @detailsBgColor;
+    height: 100%;
+}
+#column-card-right {
+    background-color: @detailsBgColor;
+    padding: 2px 2px 2px 2px;
+    height: 100%;
+}
+.card-short {
+    display: inline-block;
+    width: 100%; min-width: 300px;
+	height: 120px;
+    padding: 10px;
+    border-bottom: #eee solid 1px;
+    border-right: #eee solid 1px;
+    position: relative;
+    border-left: transparent solid 5px;
+    -webkit-transition: all 500ms ease-out;
+    -moz-transition: all 500ms ease-out;
+    -ms-transition: all 500ms ease-out;
+    -o-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+}
+.card-short .avatar {
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+.card-short .avatar img {
+    margin-top: 9px;
+    border-radius: 50%;
+}
+.card-short .content {
+    float: left;
+    padding-left: 10px;
+    width: 75%;
+}
+.card-short .time, .card-short .star {
+    position: absolute;
+}
+.card-short .star {
+    right: 5px; bottom: 5px;
+}
+.card-short .time {
+    right: 17px; top: 15px;    
+}
+.name-card h4{
+	font-weight: bold;
+}
+.card-short.selected {
+    border-left: #008f00 solid 5px;
+    -webkit-transition: all 500ms ease-out;
+    -moz-transition: all 500ms ease-out;
+    -ms-transition: all 500ms ease-out;
+    -o-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+}
+//---------------------details card ---------------------
+.details-card {
+    width: 100%; height: 100%;
+    padding: 10px;
+    position: relative;
+    border-left: transparent solid 5px;
+    -webkit-transition: all 500ms ease-out;
+    -moz-transition: all 500ms ease-out;
+    -ms-transition: all 500ms ease-out;
+    -o-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+}
+.details-card-header-title {
+    display: inline-block;
+    width: 100%; height: 90px;
+	border-bottom: #eee solid 1px;
+    position: relative;
+    padding-left: 10px;
+    
+}
+.details-card-header-title-member {
+    display: inline-block;
+    float: left;
+    width: 300px; height: 100%;
+    position: relative;
+}
+.details-card-header-title-member .details-card-header-label{
+    
+}
+.details-card-header-title-member .avatar-member-card-avatar{
+    display: inline-block;
+}
+.details-card-header-title-member .avatar-member-card-button-add{
+    display: inline-block;
+}
+.details-card-header-title-member .avatar-member-card-avatar img {
+    border-radius: 15%;
+}
+.details-card-time {
+    display: inline-block;
+    float: left;
+    width: 300px;  height: 100%;
+    position: relative;
+}
+.details-card-time .details-card-time-text, .details-card-time .details-card-time-button, .details-card-time 
+.details-card-time-stop-button {
+    position: absolute;
+}
+.details-card-time .details-card-time-text {
+    display: inline-block;
+    left: 2px; top: 30px;
+}
+.details-card-time .details-card-time-button {
+    display: inline-block;
+    left: 85px; top: 38px;
+}
+.details-card-time .details-card-time-stop-button {
+	display: inline-block;
+    left: 105px; top: 38px;
+}
+.details-card-header-title .details-card-time-star {
+	position: absolute;
+    display: inline-block;
+    right: 10px; top: 20px;
+}
+.details-card-time-star core-icon-button::shadow core-icon {
+  color: @starbuttonColor;
+}
+.details-card-time .details-card-time-stop-button core-icon {
+	color: red;
+}
+//css icon-name-card
+.details-card-icon-name {
+    position: relative;
+    width: 100%; height: 50px;
+}
+.details-card-icon-name .details-card-icon, .details-card-icon-name .details-card-name {
+    position: absolute;
+}
+.details-card-icon-name .details-card-icon{
+    left: 5px; top: 10px;
+}
+.details-card-icon-name .details-card-name {
+    left: 45px; top: 3px;
+}
+.details-card-edit-name-hide-on {
+    padding-left: 30px;
+    width: 95%;
+    display: none;
+}
+.details-card-name h4 {
+    font-weight: bold;
+}
+//---------------------------------------
+.details-card-description {
+    margin-top:20px;
+    padding-left: 10px;
+}
+.details-card-description-edit-hide-on {
+    padding-left: 30px;
+    width: 95%;
+    display: none;
+}
+.details-card-description-edit .save-description, .details-card-description-edit .cancel-description {
+    //background-color: @buttonBgColor
+}
+//------------------checklist & activity------------
+.details-card-activity-icon-name {
+    position: relative;
+    width: 100%; height: 30px;
+    margin-top:20px;
+}
+.details-card-activity-icon-name .details-card-activity-icon, .details-card-activity-icon-name .details-card-activity-name {
+    position: absolute;
+}
+.details-card-activity-icon-name .details-card-activity-icon{
+    left: 5px; top: 12px;
+}
+.details-card-activity-icon-name .details-card-activity-name {
+    left: 45px; top: 5px;
+}
+.details-card-activity-name h4 {
+    font-weight: bold;
+}
+//-----------------edit checklist---------------
+.details-card-checklist .details-card-activity .details-card-checklist-edit-hide-on {
+    padding-left: 30px;
+    width: 95%;
+    display: none;
+}
+//------------------percent------------------
+.details-card-checklist-percent-lable-process {
+    position: relative;
+    width: 100%; height: 30px;
+    margin-top:px;
+}
+.details-card-checklist-percent-lable-process .details-card-checklist-percent-lable, .details-card-checklist-percent-lable-process .details-card-checklist-process {
+    position: absolute;
+}
+.details-card-checklist-percent-lable-process .details-card-checklist-percent-lable{
+    left: 5px; top: 5px;
+}
+.details-card-checklist-percent-lable-process .details-card-checklist-process {
+    left: 45px; top: 10px;
+}
+.details-card-checklist-process paper-progress::shadow #progressContainer {
+    width: 400px;
+    height: 5px;
+}
+.details-card-checklist-process paper-progress::shadow #activeProgress {
+  background-color: @processColor;
+}
+//--------------------checkbox & activity ----------------------
+.details-card-checklist-checkbox-list {
+    position: relative;
+    width: 600px; height: 30px;
+    margin-top: 7px;
+}
+.details-card-checklist-checkbox-list .details-card-checklist-checkbox, .details-card-checklist-checkbox-list .details-card-checklist-list {
+    position: absolute;
+}
+.details-card-checklist-checkbox-list .details-card-checklist-checkbox{
+    left: 10px; top: 10px;
+}
+.details-card-checklist-checkbox-list .details-card-checklist-list {
+    left: 45px; top: 0px;
+} 
+.details-card-activity .additemchecklist {
+    margin-left: 40px;
+    font-size: 12px;
+	width: 65%;
+}
+//-----------------comment--------------------------
+.details-card-comment-header {
+    width: 100%; height: 100px;
+    position: relative;
+}
+.details-card-comment-header .details-card-comment-avatar, .details-card-comment-header .details-card-comment-write{
+    position: absolute;
+}
+.details-card-comment-header .details-card-comment-avatar {
+    display: inline-block;
+    left: 5px; top: 30px;
+
+}
+.details-card-comment-header .details-card-comment-write {
+    display: inline-block;
+    width: 65%;
+    left: 45px; top: 10px;
+}

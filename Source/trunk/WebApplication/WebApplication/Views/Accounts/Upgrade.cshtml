@@ -1,0 +1,49 @@
+﻿@using Sioux.TaskManagement
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Upgrade</title>
+
+	<script src="~/Content/components/webcomponentsjs/webcomponents.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+	<link rel="import" href="~/Content/components/paper-input/paper-input.html">
+	<link rel="import" href="~/Content/components/paper-input/paper-input-decorator.html">
+	<link rel="import" href="~/Content/components/paper-button/paper-button.html">
+
+	<link rel="stylesheet" type="text/less" href="~/Content/css/Upgrade.less">
+</head>
+<body fullbleed vertical layout unresolved>
+@using(Html.BeginForm("UpgradeCallback", "Accounts"))
+{
+	 <div class="wrapper">
+		<div class="top-wrapper">
+			<div class="title-content">
+				<h3>Upgrade account</h3>
+			</div>
+		</div>
+		<paper-shadow class="main-wrapper" z="1">
+			<div class="lorem-content">
+				<p>
+					<b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. 
+					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+					when an unknown printer took a galley of type and scrambled it to make a type 
+					specimen book.
+				</p>
+			</div>
+			<div class="button-wrapper">
+				<button type="submit" class="btn-upgrade">Upgrade</button>
+			</div>
+		</paper-shadow>
+	</div>
+}
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+﻿@bodyBgolor: #FFFFFF;
+@wordColor: #448AFF;
+@wordLoginColor: #FFFFFF;
+@bgColorButton: #42A5F5;
+@bgMainContent: #F5F5F5;
+@errorColor: #ff0000;
+
+
+body {
+    font-family: Roboto;
+    background-color: @bodyBgolor;
+}
+
+.wrapper {
+    width: 100%;
+	max-width: 400px;
+	min-width: 400px;
+	margin: 0 auto;
+}
+
+
+.logo-content {
+    margin: 20px auto;
+	text-align: center;
+	#logo {
+		color: @wordColor;
+		padding-top: 0px;
+		font-size: 1.8em;
+	}
+	#logo:hover {
+		text-decoration:none
+	}
+}
+
+
+.main-content {
+	background-color: @bgMainContent;
+    margin: 2px 20px 2px 20px;
+	padding: 0px 20px 50px 20px;
+}
+
+.bottom-content {
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+}
+
+
+/*-------------------*/
+
+#icon-account{
+	margin-top: 5px;
+	width: 70px;
+	height: 70px;
+}
+
+
+#email input,#password input{
+	padding-left: 5px;
+	height: 30px;
+	margin-top: 0px;
+    border-radius: 3px;
+}
+
+
+.main-content paper-button {
+    margin: 5px;
+    width: 100%;
+    background: @bgColorButton;
+    color: @wordLoginColor;
+}
+
+
+.forget-password {
+    margin-top: 5px;
+	position: absolute;
+	left: 20px; bottom: 10px;
+}
+
+
+.forget-password a, .bottom-content a {
+    color: @wordColor;
+    font-size: 13px;
+}
+
+.help {
+    margin-top: 5px;
+	position: absolute;
+	right: 20px; bottom: 10px;
+}
+
+#cannot-login, #email-error, #password-error {
+	padding: 5px 5px 10px 10px;
+	font-style: italic;
+	font-size: 12px;
+	color: @errorColor;
+}
+
+
+.btn-oauth {
+	margin-top: 25px;
+	.google, twitter, facebook {
+		width: 122px;
+	}
+}

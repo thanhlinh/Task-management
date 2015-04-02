@@ -1,0 +1,169 @@
+﻿#helper-wrapper.active {
+	width: 250px;
+	min-width:219px;
+	z-index: 1001;
+	position: relative;
+
+	#helper{
+		min-height: 300px;
+		width: 200px;
+		.add-column-icon{
+			display: none;
+		}
+		.add-column-input{
+		display: block;
+		width:100%;
+		}
+	}
+
+	#adv{
+		height: auto;
+		position:relative;
+		.send-invite-btn{
+			display:block;
+			width:100%;
+			margin: @gutterWidth @gutterWidth @gutterWidth 0;
+			position:absolute; bottom:0;
+			background-color: @sendInviteBngBg;
+			border-color: @sendInviteBngBg;
+		}
+	}
+
+	#theme{
+		position: absolute;
+		height: 35px;
+		bottom: 30px;
+		width: 200px;
+		padding-left: 0px;
+
+		.theme-item {
+			display: inline-block;
+			float: left;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			margin: 0px;
+			margin-right: 7px;
+			opacity: 0.5;
+		}
+		.theme-item:hover {
+			opacity: 1;
+		}
+		.theme-selected {
+			background-image: @selectIconUrl;
+			background-position: center;
+			background-repeat: no-repeat;
+			opacity: 1;
+			background-size: 16px 16px;
+		}
+		.default-theme {
+			background-color: @toolbarBgColor;
+		}
+		.sioux-theme {
+			background-color: @siouxStyle;
+		}
+	}
+
+	#language-container{
+		position: absolute;
+		height: 25px;
+		bottom: 2px;
+		width: 200px;
+		padding-left: 0px;
+
+		.language-icon{
+			display: none;
+		}
+
+		#language{
+			display: block;
+			width: 100%;
+		}
+	}
+}
+#helper-wrapper{
+	width:75px;
+	min-width:72px;
+
+	#helper{
+		min-height: 300px;
+		width: 60px;
+		
+		.add-column-input{
+		display: none;
+		}
+		.add-column-icon{
+			display: block;
+		}
+		.add-column-icon::shadow core-icon{
+			display: block;
+			width: 35px;
+			height: 35px;
+		}
+		.add-column-icon::shadow paper-ripple{
+			width: 51px;
+			height: 51px;
+		}
+	}
+
+	#adv{
+		.send-invite-btn{
+			display:none;
+		}
+	}
+
+	#theme{
+		position: absolute;
+		height: 65px;
+		bottom: 40px;
+		width: 60px;
+		padding-left:6px;
+		padding-bottom: 10px;
+
+		.theme-item {
+		//	display: none;
+			float: left;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			margin: 3px 0px 0px 7px;
+			opacity: 0.5;
+		}
+		.theme-item:hover {
+			opacity: 1;
+		}
+		.theme-selected {
+			display: block;
+			background-image: @selectIconUrl;
+			background-position: center;
+			background-repeat: no-repeat;
+			opacity: 1;
+			background-size: 16px 16px;
+		}
+		.default-theme {
+			background-color: @toolbarBgColor;
+		}
+		.sioux-theme {
+			background-color: @siouxStyle;
+		}
+	}
+
+	#language-container{
+		position: absolute;
+		height: 35px;
+		width: 60px;
+		bottom: 2px;
+		padding-left: 10px;
+
+
+		.language-icon{
+			display: block;
+			height: 35px;
+			width: 35px;
+		}
+
+		#language{
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,111 @@
+﻿@bodyBgolor: #FAFAFA;
+@wordColor: #64B5F6;
+@wordRegisterColor: #FFFFFF;
+@bgColorButton: #42A5F5;
+@bgMainContent: #F5F5F5;
+@borderColor: #EEEEEE;
+@errorColor: #ff0000;
+
+body {
+    font-family: Roboto;
+    background-color: @bodyBgolor;
+}
+
+
+.wrapper {
+    height: 100%; 
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+
+.top-wrapper {
+    width: 100%; height: 70px;
+	border-bottom: 1px solid @borderColor;
+	position: relative;
+}
+
+
+.main-wrapper {
+	background-color: @bgMainContent;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.bottom-wrapper {
+	
+}
+
+
+
+/*---------  logo  ----------*/
+.logo-content {
+	position: absolute;
+	left: 20px; top: 0px;
+}
+
+.button-login {
+	position: absolute;
+	right: 20px; top: 15px;
+}
+
+.logo-content h3{
+    color: @wordColor;
+}
+
+.button-login paper-button {
+	margin: 0px;
+    color: @wordRegisterColor;
+	background: @bgColorButton;
+}
+
+/*----------  form input------------*/
+.name {
+	width: 100%;
+	display: inline-block;
+	padding-top: 20px;
+}
+
+.name .firstname {
+	display: inline-block;
+	float: left;
+	width: 50%;
+}
+
+.name .lastname {
+	display: inline-block;
+	float: right;
+	padding-left: 5px;
+	width: 50%;
+}
+
+.main-wrapper paper-input-decorator {
+	margin-top: -2px;
+}
+
+.main-wrapper paper-button {
+    margin-top: 5px; margin-bottom: 20px;
+    width: 100%;
+    color: @wordRegisterColor;
+	background: @bgColorButton;
+}
+
+
+#term-content {
+	margin: auto;
+	text-align: center;
+}
+/*------------------error span -----------------*/
+#create_error {
+	padding-top: 10px;
+}
+
+
+.firstname #firstname_error, .lastname #lastname_error, #email_error, #password_error,
+	#repassword_error, #create_error {
+		padding: 2px 2px 5px 10px;
+		font-style: italic;
+		font-size: 12px;
+		color: @errorColor;
+}
+

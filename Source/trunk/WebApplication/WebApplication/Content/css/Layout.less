@@ -1,0 +1,221 @@
+﻿@headerColor: #F5F5F5;
+@bgMenuColor: #fff;
+@wordlogoColor: #f15d03;
+@wordheaderColor: #42A5F5;
+@borderColor: #CFCFCF;
+@wordbuttonColor : #757575;
+@togglehoverColor: #ddd;
+@amenuhoverColor: #E0E0E0;
+@loginColor: #f15d03;
+@registerColor: #428bca;
+@contactColor: #f15d03;
+
+body {
+	font-family: Roboto;
+}
+
+.wrapper {
+	height: 100%;
+	overflow-x: auto;
+}
+
+
+.header-wrapper {
+	background-color: @headerColor;
+	position: fixed;
+	width: 100%; min-width: 320px;
+	height: 70px;
+	border-bottom: 1px solid @borderColor;
+}
+
+.content-wrapper {
+	height: 100%; min-height: 750px;
+}
+
+
+.footer {
+	background-color: @headerColor;
+	border-top: 1px solid @borderColor;
+	height: 250px;
+}
+
+/*----------------------------------*/
+
+.navbar-header .logo {
+	color: @wordlogoColor;
+	font-size: 2em;
+	margin-top: 10px;
+}
+
+.navbar-header .logo:hover {
+	color: @wordlogoColor;
+}
+
+
+#header-main {
+	margin-top: 10px;
+	border: none;
+	padding-left: 30px;
+	background-color: @headerColor;
+}
+
+
+#btn-toggle {
+	margin-top: 20px;
+}
+
+#help-link, #about-link {
+	color: @wordheaderColor;
+	font-size: 15px;
+	height: 69px;
+	margin-top: -10px;
+	padding-top: 25px;
+}
+#help-link:hover, #about-link:hover{
+	background-color: @amenuhoverColor;
+}
+
+
+#help-link:focus, #about-link:focus {
+	background-color: @headerColor;
+}
+
+
+#btnLogin, #btnRegister {
+	margin: 10px 0 0 10px;
+	width: 100px; height: 35px;
+	border-radius: 5px;
+	opacity: 0.9;
+}
+
+
+#btnLogin:hover{
+	background-color: @loginColor;
+	opacity: 1;
+}
+
+
+#btnRegister:hover {
+	background-color: @registerColor;
+	opacity: 1;
+}
+
+/*--------------------------------------*/
+
+.header-bottom {
+	width: 100%;	height: 46px;
+	margin-top: 70px;
+	border-bottom: 1px solid @borderColor;
+}
+
+
+.header-menu {
+	background-color: @bgMenuColor;
+}
+
+#contact-us {
+	padding-right: 15px;
+}
+
+
+.navbar-default .navbar-toggle {
+	color: @wordbuttonColor;
+	background-color: @togglehoverColor;
+	border-radius: 5px;
+}
+
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background-color: @togglehoverColor;
+}
+/*-------------------- index -----------------*/
+.content {
+	height: 100%; min-height: 600px;
+	margin: 70px 0 50px 0;
+}
+
+.introduce-content {
+	border-right: 1px solid @borderColor;
+	min-height: 250px;
+	p {
+		text-align: justify;
+		padding-right: 20px;
+		text-indent: 30px;
+	}
+}
+
+
+.download-content {
+	padding-left: 50px;
+	.text {
+		margin-top: 7px;
+	}
+}
+
+
+.text-app {
+	text-align: right;
+	padding-bottom: 20px;
+}
+
+
+.get-ios {
+	margin-top: 20px;
+	.text {
+		margin-top: 7px;
+	}
+}
+
+.get-android {
+	margin-top: 20px;
+	.text {
+		margin-top: 7px;
+	}
+}
+
+
+.about-dashboard {
+	text-align: center;
+
+	> img {
+		 width: 90%;
+		 height: 450px;
+	}
+
+	> p{
+		padding: 50px 100px 50px 100px;
+	}
+}
+
+
+.contact-footer {
+	width: 100%;	height: 30px;
+	background-color: @contactColor;
+	margin-top: 20px;
+	padding-top: 5px;
+	text-align: center;
+	> #feedback-link, #contact-link{
+		color: #000;
+		margin-top: 10px;
+	}
+}
+
+.team-footer {
+	margin-top: 10px;
+	> p{
+		margin-top: -5px;
+	}
+}
+
+.announce-footer {
+	margin-top: 10px;
+}
+
+/*----------------------------about-------------------------*/
+
+.about-sioux-company {
+	> p{
+		text-indent: 30px;
+		text-align: justify;
+	}
+}

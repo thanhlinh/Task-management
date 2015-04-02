@@ -1,0 +1,11 @@
+﻿@section featured {
+@{
+	ViewBag.Message = Session["Message"];
+}
+	<div class="content">
+		<div class="row">
+			<h3>@ViewBag.Message</h3>
+			@Html.ActionLink("Back to list", "Index")
+		</div>
+	</div>
+}

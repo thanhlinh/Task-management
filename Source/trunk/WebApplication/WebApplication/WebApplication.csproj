@@ -1,0 +1,2439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3CE6437-D502-48BB-B3E8-6B52992162D1}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sioux.TaskManagement</RootNamespace>
+    <AssemblyName>TaskManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <WebGreaseLibPath>..\..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.Core">
+      <HintPath>..\..\packages\dotless.1.4.1.0\lib\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core.UI, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.InfoCard, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.InfoCard.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.InfoCard.UI, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.InfoCard.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OAuth.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.ServiceProvider, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OAuth.ServiceProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OAuth2.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.AuthorizationServer, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OAuth2.AuthorizationServer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.Client, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OAuth2.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.Client.UI, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OAuth2.Client.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.ClientAuthorization, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OAuth2.ClientAuthorization.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.ResourceServer, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OAuth2.ResourceServer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.Provider, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OpenId.Provider.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.Provider.UI, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OpenId.Provider.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty.UI, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OpenId.RelyingParty.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.UI, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OpenId.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenIdInfoCard.UI, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OpenIdInfoCard.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenIdOAuth, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\DotNetOpenAuth.OpenIdOAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.30506.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\..\packages\RestSharp.104.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\..\Libraries\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.30506.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Constant.cs" />
+    <Compile Include="Controllers\CardsController.cs" />
+    <Compile Include="Controllers\ColumnsController.cs" />
+    <Compile Include="Controllers\ColumnSettingsController.cs" />
+    <Compile Include="Controllers\DebugController.cs" />
+    <Compile Include="Controllers\GUIController.cs" />
+    <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\BoardsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="App_Start\JsonNetResult.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\InviteController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="DBContext\InitializeMembership.cs" />
+    <Compile Include="DBContext\UsersContext.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\CultureHelper.cs" />
+    <Compile Include="Helper\EmailHelper.cs" />
+    <Compile Include="Helper\UserHelper.cs" />
+    <Compile Include="Models\AccountMVC.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MagicUrl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\database.mdf" />
+    <Content Include="App_Data\database_log.ldf">
+      <DependentUpon>database.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\components\core-a11y-keys\core-a11y-keys.html" />
+    <Content Include="Content\components\core-a11y-keys\core-a11y-keys.js" />
+    <Content Include="Content\components\core-a11y-keys\demo.html" />
+    <Content Include="Content\components\core-a11y-keys\index.html" />
+    <Content Include="Content\components\core-component-page\bowager-logo.png" />
+    <Content Include="Content\components\core-component-page\core-component-page.html" />
+    <Content Include="Content\components\core-component-page\demo.html" />
+    <Content Include="Content\components\core-component-page\index.html" />
+    <Content Include="Content\components\core-dropdown-menu\core-dropdown-menu.html" />
+    <Content Include="Content\components\core-dropdown-menu\demo.html" />
+    <Content Include="Content\components\core-dropdown-menu\index.html" />
+    <Content Include="Content\components\core-dropdown-menu\test\a11y.html" />
+    <Content Include="Content\components\core-dropdown-menu\test\basic.html" />
+    <Content Include="Content\components\core-dropdown-menu\test\index.html" />
+    <Content Include="Content\components\core-dropdown\core-dropdown-base.html" />
+    <Content Include="Content\components\core-dropdown\core-dropdown.html" />
+    <Content Include="Content\components\core-dropdown\demo.html" />
+    <Content Include="Content\components\core-dropdown\index.html" />
+    <Content Include="Content\components\core-dropdown\test\basic.html" />
+    <Content Include="Content\components\core-dropdown\test\index.html" />
+    <Content Include="Content\components\core-focusable\core-focusable.html" />
+    <Content Include="Content\components\core-focusable\core-focusable.js" />
+    <Content Include="Content\components\core-focusable\demo.html" />
+    <Content Include="Content\components\core-focusable\polymer-mixin.js" />
+    <Content Include="Content\components\core-header-panel\core-header-panel.css" />
+    <Content Include="Content\components\core-header-panel\core-header-panel.html" />
+    <Content Include="Content\components\core-header-panel\core-header-panel.js" />
+    <Content Include="Content\components\core-header-panel\demo.html" />
+    <Content Include="Content\components\core-header-panel\index.html" />
+    <Content Include="Content\components\core-header-panel\metadata.html" />
+    <Content Include="Content\components\core-icon-button\core-icon-button.css" />
+    <Content Include="Content\components\core-icon-button\core-icon-button.html" />
+    <Content Include="Content\components\core-icon-button\core-icon-button.js" />
+    <Content Include="Content\components\core-icon-button\demo.html" />
+    <Content Include="Content\components\core-icon-button\index.html" />
+    <Content Include="Content\components\core-icon-button\metadata.html" />
+    <Content Include="Content\components\core-iconset-svg\core-iconset-svg.html" />
+    <Content Include="Content\components\core-iconset-svg\core-iconset-svg.js" />
+    <Content Include="Content\components\core-iconset-svg\demo.html" />
+    <Content Include="Content\components\core-iconset-svg\index.html" />
+    <Content Include="Content\components\core-iconset-svg\svg-sample-icons.html" />
+    <Content Include="Content\components\core-iconset\core-iconset.html" />
+    <Content Include="Content\components\core-iconset\core-iconset.js" />
+    <Content Include="Content\components\core-iconset\demo.html" />
+    <Content Include="Content\components\core-iconset\index.html" />
+    <Content Include="Content\components\core-iconset\my-icons-big.png" />
+    <Content Include="Content\components\core-iconset\my-icons.png" />
+    <Content Include="Content\components\core-icons\av-icons.html" />
+    <Content Include="Content\components\core-icons\communication-icons.html" />
+    <Content Include="Content\components\core-icons\core-icons.html" />
+    <Content Include="Content\components\core-icons\demo.html" />
+    <Content Include="Content\components\core-icons\device-icons.html" />
+    <Content Include="Content\components\core-icons\editor-icons.html" />
+    <Content Include="Content\components\core-icons\hardware-icons.html" />
+    <Content Include="Content\components\core-icons\image-icons.html" />
+    <Content Include="Content\components\core-icons\index.html" />
+    <Content Include="Content\components\core-icons\maps-icons.html" />
+    <Content Include="Content\components\core-icons\notification-icons.html" />
+    <Content Include="Content\components\core-icons\png-icons.html" />
+    <Content Include="Content\components\core-icons\social-icons.html" />
+    <Content Include="Content\components\core-icon\core-icon.css" />
+    <Content Include="Content\components\core-icon\core-icon.html" />
+    <Content Include="Content\components\core-icon\core-icon.js" />
+    <Content Include="Content\components\core-icon\demo.html" />
+    <Content Include="Content\components\core-icon\index.html" />
+    <Content Include="Content\components\core-icon\metadata.html" />
+    <Content Include="Content\components\core-input\core-input.css" />
+    <Content Include="Content\components\core-input\core-input.html" />
+    <Content Include="Content\components\core-input\core-input.js" />
+    <Content Include="Content\components\core-input\demo.html" />
+    <Content Include="Content\components\core-input\index.html" />
+    <Content Include="Content\components\core-input\metadata.html" />
+    <Content Include="Content\components\core-input\test\a11y.html" />
+    <Content Include="Content\components\core-input\test\basic.html" />
+    <Content Include="Content\components\core-input\test\index.html" />
+    <Content Include="Content\components\core-item\core-item.css" />
+    <Content Include="Content\components\core-item\core-item.html" />
+    <Content Include="Content\components\core-item\core-item.js" />
+    <Content Include="Content\components\core-item\demo.html" />
+    <Content Include="Content\components\core-item\index.html" />
+    <Content Include="Content\components\core-item\metadata.html" />
+    <Content Include="Content\components\core-menu-button\core-menu-button.html" />
+    <Content Include="Content\components\core-menu-button\demo.html" />
+    <Content Include="Content\components\core-menu-button\index.html" />
+    <Content Include="Content\components\core-menu-button\metadata.html" />
+    <Content Include="Content\components\core-menu-button\test\basic.html" />
+    <Content Include="Content\components\core-menu-button\test\index.html" />
+    <Content Include="Content\components\core-menu\core-menu.css" />
+    <Content Include="Content\components\core-menu\core-menu.html" />
+    <Content Include="Content\components\core-menu\core-submenu.css" />
+    <Content Include="Content\components\core-menu\core-submenu.html" />
+    <Content Include="Content\components\core-menu\demo.html" />
+    <Content Include="Content\components\core-menu\index.html" />
+    <Content Include="Content\components\core-menu\metadata.html" />
+    <Content Include="Content\components\core-meta\core-meta.html" />
+    <Content Include="Content\components\core-meta\core-meta.js" />
+    <Content Include="Content\components\core-meta\demo.html" />
+    <Content Include="Content\components\core-meta\index.html" />
+    <Content Include="Content\components\core-range\core-range.html" />
+    <Content Include="Content\components\core-range\core-range.js" />
+    <Content Include="Content\components\core-range\demo.html" />
+    <Content Include="Content\components\core-range\index.html" />
+    <Content Include="Content\components\core-range\test\basic.html" />
+    <Content Include="Content\components\core-range\test\index.html" />
+    <Content Include="Content\components\core-selection\core-selection.html" />
+    <Content Include="Content\components\core-selection\core-selection.js" />
+    <Content Include="Content\components\core-selection\demo.html" />
+    <Content Include="Content\components\core-selection\index.html" />
+    <Content Include="Content\components\core-selection\test\basic.html" />
+    <Content Include="Content\components\core-selection\test\index.html" />
+    <Content Include="Content\components\core-selection\test\multi.html" />
+    <Content Include="Content\components\core-selector\core-selector.html" />
+    <Content Include="Content\components\core-selector\core-selector.js" />
+    <Content Include="Content\components\core-selector\demo.html" />
+    <Content Include="Content\components\core-selector\index.html" />
+    <Content Include="Content\components\core-selector\metadata.html" />
+    <Content Include="Content\components\core-selector\test\activate-event.html" />
+    <Content Include="Content\components\core-selector\test\basic.html" />
+    <Content Include="Content\components\core-selector\test\content.html" />
+    <Content Include="Content\components\core-selector\test\index.html" />
+    <Content Include="Content\components\core-selector\test\multi.html" />
+    <Content Include="Content\components\core-selector\test\next-previous.html" />
+    <Content Include="Content\components\core-selector\test\selected-attr-prop.html" />
+    <Content Include="Content\components\core-selector\test\template-repeat.html" />
+    <Content Include="Content\components\core-style\core-style.html" />
+    <Content Include="Content\components\core-style\core-style.js" />
+    <Content Include="Content\components\core-style\demo.html" />
+    <Content Include="Content\components\core-style\elements.html" />
+    <Content Include="Content\components\core-style\index.html" />
+    <Content Include="Content\components\core-style\my-theme.html" />
+    <Content Include="Content\components\core-toolbar\core-toolbar.css" />
+    <Content Include="Content\components\core-toolbar\core-toolbar.html" />
+    <Content Include="Content\components\core-toolbar\core-toolbar.js" />
+    <Content Include="Content\components\core-toolbar\demo.html" />
+    <Content Include="Content\components\core-toolbar\index.html" />
+    <Content Include="Content\components\core-toolbar\metadata.html" />
+    <Content Include="Content\components\core-toolbar\test\basic.html" />
+    <Content Include="Content\components\core-toolbar\test\index.html" />
+    <Content Include="Content\components\NodeBind\conf\karma.conf.js" />
+    <Content Include="Content\components\NodeBind\conf\mocha.conf.js" />
+    <Content Include="Content\components\NodeBind\gruntfile.js" />
+    <Content Include="Content\components\NodeBind\src\NodeBind.js" />
+    <Content Include="Content\components\observe-js\benchmark\benchmark.js" />
+    <Content Include="Content\components\observe-js\benchmark\d8_benchmarks.js" />
+    <Content Include="Content\components\observe-js\benchmark\index.html" />
+    <Content Include="Content\components\observe-js\benchmark\observation_benchmark.js" />
+    <Content Include="Content\components\observe-js\conf\karma.conf.js" />
+    <Content Include="Content\components\observe-js\conf\mocha.conf.js" />
+    <Content Include="Content\components\observe-js\examples\circles.html" />
+    <Content Include="Content\components\observe-js\examples\constrain.html" />
+    <Content Include="Content\components\observe-js\examples\constrain.js" />
+    <Content Include="Content\components\observe-js\examples\persist.html" />
+    <Content Include="Content\components\observe-js\examples\persist.js" />
+    <Content Include="Content\components\observe-js\gruntfile.js" />
+    <Content Include="Content\components\observe-js\index.html" />
+    <Content Include="Content\components\observe-js\src\observe.js" />
+    <Content Include="Content\components\observe-js\util\planner.js" />
+    <Content Include="Content\components\paper-button\demo.html" />
+    <Content Include="Content\components\paper-button\index.html" />
+    <Content Include="Content\components\paper-button\metadata.html" />
+    <Content Include="Content\components\paper-button\paper-button-base.html" />
+    <Content Include="Content\components\paper-button\paper-button-base.js" />
+    <Content Include="Content\components\paper-button\paper-button.html" />
+    <Content Include="Content\components\paper-button\paper-button.js" />
+    <Content Include="Content\components\paper-button\test\a11y.html" />
+    <Content Include="Content\components\paper-button\test\basic.html" />
+    <Content Include="Content\components\paper-button\test\index.html" />
+    <Content Include="Content\components\paper-checkbox\demo.html" />
+    <Content Include="Content\components\paper-checkbox\index.html" />
+    <Content Include="Content\components\paper-checkbox\metadata.html" />
+    <Content Include="Content\components\paper-checkbox\paper-checkbox.css" />
+    <Content Include="Content\components\paper-checkbox\paper-checkbox.html" />
+    <Content Include="Content\components\paper-checkbox\paper-checkbox.js" />
+    <Content Include="Content\components\paper-dialog\demo.html" />
+    <Content Include="Content\components\paper-dialog\index.html" />
+    <Content Include="Content\components\paper-dialog\paper-action-dialog.html" />
+    <Content Include="Content\components\paper-dialog\paper-dialog-base.html" />
+    <Content Include="Content\components\paper-dialog\paper-dialog-base.js" />
+    <Content Include="Content\components\paper-dialog\paper-dialog-transition.css" />
+    <Content Include="Content\components\paper-dialog\paper-dialog-transition.html" />
+    <Content Include="Content\components\paper-dialog\paper-dialog.html" />
+    <Content Include="Content\components\paper-dialog\test\basic.html" />
+    <Content Include="Content\components\paper-icon-button\demo.html" />
+    <Content Include="Content\components\paper-icon-button\index.html" />
+    <Content Include="Content\components\paper-icon-button\metadata.html" />
+    <Content Include="Content\components\paper-icon-button\paper-icon-button.html" />
+    <Content Include="Content\components\paper-icon-button\paper-icon-button.js" />
+    <Content Include="Content\components\paper-icon-button\test\a11y.html" />
+    <Content Include="Content\components\paper-icon-button\test\basic.html" />
+    <Content Include="Content\components\paper-icon-button\test\index.html" />
+    <Content Include="Content\components\paper-input\demo.html" />
+    <Content Include="Content\components\paper-input\index.html" />
+    <Content Include="Content\components\paper-input\metadata.html" />
+    <Content Include="Content\components\paper-input\paper-autogrow-textarea-first.js" />
+    <Content Include="Content\components\paper-input\paper-autogrow-textarea-second.js" />
+    <Content Include="Content\components\paper-input\paper-autogrow-textarea.html" />
+    <Content Include="Content\components\paper-input\paper-input-decorator.css" />
+    <Content Include="Content\components\paper-input\paper-input-decorator.html" />
+    <Content Include="Content\components\paper-input\paper-input-decorator.js" />
+    <Content Include="Content\components\paper-input\paper-input.html" />
+    <Content Include="Content\components\paper-input\paper-input.js" />
+    <Content Include="Content\components\paper-input\test\a11y.html" />
+    <Content Include="Content\components\paper-input\test\autogrow.html" />
+    <Content Include="Content\components\paper-input\test\decorator.html" />
+    <Content Include="Content\components\paper-input\test\index.html" />
+    <Content Include="Content\components\paper-progress\demo.html" />
+    <Content Include="Content\components\paper-progress\index.html" />
+    <Content Include="Content\components\paper-progress\metadata.html" />
+    <Content Include="Content\components\paper-progress\paper-progress.css" />
+    <Content Include="Content\components\paper-progress\paper-progress.html" />
+    <Content Include="Content\components\paper-progress\paper-progress.js" />
+    <Content Include="Content\components\paper-radio-button\demo.html" />
+    <Content Include="Content\components\paper-radio-button\index.html" />
+    <Content Include="Content\components\paper-radio-button\metadata.html" />
+    <Content Include="Content\components\paper-radio-button\paper-radio-button.css" />
+    <Content Include="Content\components\paper-radio-button\paper-radio-button.html" />
+    <Content Include="Content\components\paper-radio-button\paper-radio-button.js" />
+    <Content Include="Content\components\paper-radio-group\demo.html" />
+    <Content Include="Content\components\paper-radio-group\index.html" />
+    <Content Include="Content\components\paper-radio-group\metadata.html" />
+    <Content Include="Content\components\paper-radio-group\paper-radio-group.html" />
+    <Content Include="Content\components\paper-radio-group\paper-radio-group.js" />
+    <Content Include="Content\components\paper-ripple\demo.html" />
+    <Content Include="Content\components\paper-ripple\index.html" />
+    <Content Include="Content\components\paper-ripple\metadata.html" />
+    <Content Include="Content\components\paper-ripple\paper-ripple.html" />
+    <Content Include="Content\components\paper-ripple\paper-ripple.js" />
+    <Content Include="Content\components\paper-ripple\test\index.html" />
+    <Content Include="Content\components\paper-ripple\test\position.html" />
+    <Content Include="Content\components\paper-shadow\demo.html" />
+    <Content Include="Content\components\paper-shadow\index.html" />
+    <Content Include="Content\components\paper-shadow\metadata.html" />
+    <Content Include="Content\components\paper-shadow\paper-shadow.css" />
+    <Content Include="Content\components\paper-shadow\paper-shadow.html" />
+    <Content Include="Content\components\paper-shadow\paper-shadow.js" />
+    <Content Include="Content\components\paper-shadow\test\basic.html" />
+    <Content Include="Content\components\paper-shadow\test\index.html" />
+    <Content Include="Content\components\paper-slider\demo.html" />
+    <Content Include="Content\components\paper-slider\index.html" />
+    <Content Include="Content\components\paper-slider\metadata.html" />
+    <Content Include="Content\components\paper-slider\paper-slider.css" />
+    <Content Include="Content\components\paper-slider\paper-slider.html" />
+    <Content Include="Content\components\paper-slider\paper-slider.js" />
+    <Content Include="Content\components\polymer-expressions\conf\karma.conf.js" />
+    <Content Include="Content\components\polymer-expressions\conf\mocha.conf.js" />
+    <Content Include="Content\components\polymer-expressions\gruntfile.js" />
+    <Content Include="Content\components\polymer-expressions\index.html" />
+    <Content Include="Content\components\polymer-expressions\polymer-expressions.html" />
+    <Content Include="Content\components\polymer-expressions\smoke.html" />
+    <Content Include="Content\components\polymer-expressions\src\polymer-expressions.js" />
+    <Content Include="Content\components\polymer-expressions\third_party\esprima\esprima.js" />
+    <Content Include="Content\components\polymer-gestures\banner.txt" />
+    <Content Include="Content\components\polymer-gestures\conf\karma.conf.js" />
+    <Content Include="Content\components\polymer-gestures\Gruntfile.js" />
+    <Content Include="Content\components\polymer-gestures\polymer-gestures.html" />
+    <Content Include="Content\components\polymer-gestures\polymer-gestures.js" />
+    <Content Include="Content\components\polymer-gestures\samples\pinch\index.html" />
+    <Content Include="Content\components\polymer-gestures\samples\simple\index.html" />
+    <Content Include="Content\components\polymer-gestures\src\dispatcher.js" />
+    <Content Include="Content\components\polymer-gestures\src\eventFactory.js" />
+    <Content Include="Content\components\polymer-gestures\src\hold.js" />
+    <Content Include="Content\components\polymer-gestures\src\mouse.js" />
+    <Content Include="Content\components\polymer-gestures\src\ms.js" />
+    <Content Include="Content\components\polymer-gestures\src\pinch.js" />
+    <Content Include="Content\components\polymer-gestures\src\platform-events.js" />
+    <Content Include="Content\components\polymer-gestures\src\pointer.js" />
+    <Content Include="Content\components\polymer-gestures\src\pointermap.js" />
+    <Content Include="Content\components\polymer-gestures\src\scope.js" />
+    <Content Include="Content\components\polymer-gestures\src\tap.js" />
+    <Content Include="Content\components\polymer-gestures\src\targetfind.js" />
+    <Content Include="Content\components\polymer-gestures\src\touch-action.js" />
+    <Content Include="Content\components\polymer-gestures\src\touch.js" />
+    <Content Include="Content\components\polymer-gestures\src\track.js" />
+    <Content Include="Content\components\polymer-gestures\test\html\content-handler.html" />
+    <Content Include="Content\components\polymer-gestures\test\html\focus.html" />
+    <Content Include="Content\components\polymer-gestures\test\html\ghostclick.html" />
+    <Content Include="Content\components\polymer-gestures\test\js\eventListeners.js" />
+    <Content Include="Content\components\polymer-gestures\test\js\fake.js" />
+    <Content Include="Content\components\polymer-gestures\test\js\gestures.js" />
+    <Content Include="Content\components\polymer-gestures\test\js\pointermap.js" />
+    <Content Include="Content\components\polymer-gestures\test\js\setup.js" />
+    <Content Include="Content\components\polymer-gestures\test\runner.html" />
+    <Content Include="Content\components\polymer\banner.txt" />
+    <Content Include="Content\components\polymer\conf\karma.conf.js" />
+    <Content Include="Content\components\polymer\conf\mocha.conf.js" />
+    <Content Include="Content\components\polymer\dist\polymer.html" />
+    <Content Include="Content\components\polymer\gruntfile.js" />
+    <Content Include="Content\components\polymer\index.html" />
+    <Content Include="Content\components\polymer\layout.html" />
+    <Content Include="Content\components\polymer\polymer-first.js" />
+    <Content Include="Content\components\polymer\polymer.html" />
+    <Content Include="Content\components\polymer\src\api.js" />
+    <Content Include="Content\components\polymer\src\boot.js" />
+    <Content Include="Content\components\polymer\src\declaration\attributes.js" />
+    <Content Include="Content\components\polymer\src\declaration\events.js" />
+    <Content Include="Content\components\polymer\src\declaration\mdv.js" />
+    <Content Include="Content\components\polymer\src\declaration\path.js" />
+    <Content Include="Content\components\polymer\src\declaration\polymer-element.js" />
+    <Content Include="Content\components\polymer\src\declaration\polymer.js" />
+    <Content Include="Content\components\polymer\src\declaration\properties.js" />
+    <Content Include="Content\components\polymer\src\declaration\prototype.js" />
+    <Content Include="Content\components\polymer\src\declaration\queue.js" />
+    <Content Include="Content\components\polymer\src\declaration\styles.js" />
+    <Content Include="Content\components\polymer\src\instance\attributes.js" />
+    <Content Include="Content\components\polymer\src\instance\base.js" />
+    <Content Include="Content\components\polymer\src\instance\events.js" />
+    <Content Include="Content\components\polymer\src\instance\mdv.js" />
+    <Content Include="Content\components\polymer\src\instance\properties.js" />
+    <Content Include="Content\components\polymer\src\instance\styles.js" />
+    <Content Include="Content\components\polymer\src\instance\utils.js" />
+    <Content Include="Content\components\polymer\src\lib\auto-binding.js" />
+    <Content Include="Content\components\polymer\src\lib\deserialize.js" />
+    <Content Include="Content\components\polymer\src\lib\dom.js" />
+    <Content Include="Content\components\polymer\src\lib\import.js" />
+    <Content Include="Content\components\polymer\src\lib\job.js" />
+    <Content Include="Content\components\polymer\src\lib\lang.js" />
+    <Content Include="Content\components\polymer\src\lib\loader.js" />
+    <Content Include="Content\components\polymer\src\lib\styleloader.js" />
+    <Content Include="Content\components\polymer\src\lib\super.js" />
+    <Content Include="Content\components\polymer\src\lib\url.js" />
+    <Content Include="Content\components\polymer\src\polymer.js" />
+    <Content Include="Content\components\polymer\src\system\build-begin-if.js" />
+    <Content Include="Content\components\polymer\src\system\build-end-if.js" />
+    <Content Include="Content\components\polymer\src\system\compat.js" />
+    <Content Include="Content\components\polymer\src\system\flush.js" />
+    <Content Include="Content\components\polymer\src\system\HTMLImports\base.js" />
+    <Content Include="Content\components\polymer\src\system\microtask.js" />
+    <Content Include="Content\components\polymer\src\system\module.js" />
+    <Content Include="Content\components\polymer\src\system\unresolved.js" />
+    <Content Include="Content\components\polymer\test\html\async.html" />
+    <Content Include="Content\components\polymer\test\html\attr-mustache.html" />
+    <Content Include="Content\components\polymer\test\html\auto-binding.html" />
+    <Content Include="Content\components\polymer\test\html\bind-object-repeat.html" />
+    <Content Include="Content\components\polymer\test\html\bind.html" />
+    <Content Include="Content\components\polymer\test\html\bindProperties.html" />
+    <Content Include="Content\components\polymer\test\html\callbacks.html" />
+    <Content Include="Content\components\polymer\test\html\computedProperties.html" />
+    <Content Include="Content\components\polymer\test\html\ctor.html" />
+    <Content Include="Content\components\polymer\test\html\domready.html" />
+    <Content Include="Content\components\polymer\test\html\element-import.html" />
+    <Content Include="Content\components\polymer\test\html\element-import\elements.js" />
+    <Content Include="Content\components\polymer\test\html\element-import\import-a.html" />
+    <Content Include="Content\components\polymer\test\html\element-import\import-b.html" />
+    <Content Include="Content\components\polymer\test\html\element-import\import.html" />
+    <Content Include="Content\components\polymer\test\html\element-import\x-quux.js" />
+    <Content Include="Content\components\polymer\test\html\element-instanceOfType.html" />
+    <Content Include="Content\components\polymer\test\html\element-registration.html" />
+    <Content Include="Content\components\polymer\test\html\element-script.html" />
+    <Content Include="Content\components\polymer\test\html\element-script\elements.js" />
+    <Content Include="Content\components\polymer\test\html\element-script\x-quux.js" />
+    <Content Include="Content\components\polymer\test\html\event-handlers-host.html" />
+    <Content Include="Content\components\polymer\test\html\event-handlers-light.html" />
+    <Content Include="Content\components\polymer\test\html\event-handlers.html" />
+    <Content Include="Content\components\polymer\test\html\event-path-declarative.html" />
+    <Content Include="Content\components\polymer\test\html\event-path.html" />
+    <Content Include="Content\components\polymer\test\html\forceReady.html" />
+    <Content Include="Content\components\polymer\test\html\import-element-nopolymer.html" />
+    <Content Include="Content\components\polymer\test\html\import-infer-name.html" />
+    <Content Include="Content\components\polymer\test\html\import-warning.html" />
+    <Content Include="Content\components\polymer\test\html\infer-name-script.js" />
+    <Content Include="Content\components\polymer\test\html\infer-name.html" />
+    <Content Include="Content\components\polymer\test\html\layout.html" />
+    <Content Include="Content\components\polymer\test\html\loader-deduplicate.html" />
+    <Content Include="Content\components\polymer\test\html\mdv-shadow.html" />
+    <Content Include="Content\components\polymer\test\html\mdv-syntax.html" />
+    <Content Include="Content\components\polymer\test\html\mdv-tests\polymer-expressions-tests.js" />
+    <Content Include="Content\components\polymer\test\html\mdv-tests\template-binding-tests.js" />
+    <Content Include="Content\components\polymer\test\html\platform-less-import.html" />
+    <Content Include="Content\components\polymer\test\html\platform-less.html" />
+    <Content Include="Content\components\polymer\test\html\polymer-import.html" />
+    <Content Include="Content\components\polymer\test\html\popup.html" />
+    <Content Include="Content\components\polymer\test\html\prepare.html" />
+    <Content Include="Content\components\polymer\test\html\prop-attr-bind-reflection.html" />
+    <Content Include="Content\components\polymer\test\html\prop-attr-reflection.html" />
+    <Content Include="Content\components\polymer\test\html\prop-bind-oo.html" />
+    <Content Include="Content\components\polymer\test\html\property-array-changes.html" />
+    <Content Include="Content\components\polymer\test\html\property-changes.html" />
+    <Content Include="Content\components\polymer\test\html\property-observe.html" />
+    <Content Include="Content\components\polymer\test\html\publish-attributes.html" />
+    <Content Include="Content\components\polymer\test\html\reflection.html" />
+    <Content Include="Content\components\polymer\test\html\resolvePath.html" />
+    <Content Include="Content\components\polymer\test\html\resolve\x-resolve-import.html" />
+    <Content Include="Content\components\polymer\test\html\shadowroots.html" />
+    <Content Include="Content\components\polymer\test\html\styling\recursive-style-import.html" />
+    <Content Include="Content\components\polymer\test\html\styling\rules\ce-style-import.html" />
+    <Content Include="Content\components\polymer\test\html\styling\rules\coloring\border.css" />
+    <Content Include="Content\components\polymer\test\html\styling\rules\coloring\colors.css" />
+    <Content Include="Content\components\polymer\test\html\styling\rules\coloring\foreground.css" />
+    <Content Include="Content\components\polymer\test\html\styling\rules\colors.css" />
+    <Content Include="Content\components\polymer\test\html\styling\rules\sizing.css" />
+    <Content Include="Content\components\polymer\test\html\styling\rules\sizing\height.css" />
+    <Content Include="Content\components\polymer\test\html\styling\rules\sizing\hw.css" />
+    <Content Include="Content\components\polymer\test\html\styling\rules\sizing\width.css" />
+    <Content Include="Content\components\polymer\test\html\styling\rules\translation.css" />
+    <Content Include="Content\components\polymer\test\html\styling\rules\translations\2d.css" />
+    <Content Include="Content\components\polymer\test\html\styling\sheet-main-doc.html" />
+    <Content Include="Content\components\polymer\test\html\styling\sheet-order.html" />
+    <Content Include="Content\components\polymer\test\html\styling\sheet-scope.html" />
+    <Content Include="Content\components\polymer\test\html\styling\sheet1.css" />
+    <Content Include="Content\components\polymer\test\html\styling\sheet2.css" />
+    <Content Include="Content\components\polymer\test\html\styling\unresolved.html" />
+    <Content Include="Content\components\polymer\test\html\styling\x-sheet-main-doc.html" />
+    <Content Include="Content\components\polymer\test\html\styling\x-sheets.html" />
+    <Content Include="Content\components\polymer\test\html\take-attributes.html" />
+    <Content Include="Content\components\polymer\test\html\template-attr-template-import.html" />
+    <Content Include="Content\components\polymer\test\html\template-attr-template.html" />
+    <Content Include="Content\components\polymer\test\html\template-distribute-dynamic.html" />
+    <Content Include="Content\components\polymer\test\html\template-repeat-wrappers.html" />
+    <Content Include="Content\components\polymer\test\html\unbind.html" />
+    <Content Include="Content\components\polymer\test\html\url.html" />
+    <Content Include="Content\components\polymer\test\html\visibility.html" />
+    <Content Include="Content\components\polymer\test\index.html" />
+    <Content Include="Content\components\polymer\test\js\attrs.js" />
+    <Content Include="Content\components\polymer\test\js\bindMDV.js" />
+    <Content Include="Content\components\polymer\test\js\events.js" />
+    <Content Include="Content\components\polymer\test\js\marshall.js" />
+    <Content Include="Content\components\polymer\test\js\oop.js" />
+    <Content Include="Content\components\polymer\test\js\paths.js" />
+    <Content Include="Content\components\polymer\test\js\register.js" />
+    <Content Include="Content\components\polymer\test\lib\htmltest.js" />
+    <Content Include="Content\components\polymer\test\lib\karma-include-polymer.js" />
+    <Content Include="Content\components\polymer\test\lib\mocha-htmltest.js" />
+    <Content Include="Content\components\polymer\workbench\events\index.html" />
+    <Content Include="Content\components\polymer\workbench\images\add.png" />
+    <Content Include="Content\components\polymer\workbench\images\comment.png" />
+    <Content Include="Content\components\polymer\workbench\images\favorite.png" />
+    <Content Include="Content\components\polymer\workbench\images\hangout.png" />
+    <Content Include="Content\components\polymer\workbench\images\mail.png" />
+    <Content Include="Content\components\polymer\workbench\images\menu.png" />
+    <Content Include="Content\components\polymer\workbench\images\ribbon_accounts.png" />
+    <Content Include="Content\components\polymer\workbench\images\ribbon_explore.png" />
+    <Content Include="Content\components\polymer\workbench\images\ribbon_home.png" />
+    <Content Include="Content\components\polymer\workbench\images\ribbon_topics.png" />
+    <Content Include="Content\components\polymer\workbench\images\star_full.svg" />
+    <Content Include="Content\components\polymer\workbench\mdv\memory-compound.html" />
+    <Content Include="Content\components\polymer\workbench\mdv\memory-manual.html" />
+    <Content Include="Content\components\polymer\workbench\mdv\memory-no-insert.html" />
+    <Content Include="Content\components\polymer\workbench\mdv\memory.html" />
+    <Content Include="Content\components\polymer\workbench\moreSmoke\index.html" />
+    <Content Include="Content\components\polymer\workbench\moreSmoke\x-foo.css" />
+    <Content Include="Content\components\polymer\workbench\null\index.html" />
+    <Content Include="Content\components\polymer\workbench\oldSmoke\index.html" />
+    <Content Include="Content\components\polymer\workbench\oldSmoke\x-bar.html" />
+    <Content Include="Content\components\polymer\workbench\oldSmoke\x-foo.html" />
+    <Content Include="Content\components\polymer\workbench\oldSmoke\x-zot.html" />
+    <Content Include="Content\components\polymer\workbench\oop\class.html" />
+    <Content Include="Content\components\polymer\workbench\oop\extend.html" />
+    <Content Include="Content\components\polymer\workbench\oop\node-class.html" />
+    <Content Include="Content\components\polymer\workbench\oop\plain.html" />
+    <Content Include="Content\components\polymer\workbench\oop\super.html" />
+    <Content Include="Content\components\polymer\workbench\register\register.html" />
+    <Content Include="Content\components\polymer\workbench\register\register_1.html" />
+    <Content Include="Content\components\polymer\workbench\smoke\elements.js" />
+    <Content Include="Content\components\polymer\workbench\smoke\index.html" />
+    <Content Include="Content\components\polymer\workbench\smoke\x-quux.js" />
+    <Content Include="Content\components\polymer\workbench\styling\host.css" />
+    <Content Include="Content\components\polymer\workbench\styling\host.html" />
+    <Content Include="Content\components\polymer\workbench\styling\zim.html" />
+    <Content Include="Content\components\TemplateBinding\benchmark\benchmark.js" />
+    <Content Include="Content\components\TemplateBinding\benchmark\codereview-diff.html" />
+    <Content Include="Content\components\TemplateBinding\benchmark\d8_benchmark.js" />
+    <Content Include="Content\components\TemplateBinding\benchmark\data.js" />
+    <Content Include="Content\components\TemplateBinding\benchmark\dom.js" />
+    <Content Include="Content\components\TemplateBinding\benchmark\index.html" />
+    <Content Include="Content\components\TemplateBinding\docs\images\README\arrayUpdate.png" />
+    <Content Include="Content\components\TemplateBinding\docs\images\README\DOM.png" />
+    <Content Include="Content\components\TemplateBinding\docs\images\README\input.png" />
+    <Content Include="Content\components\TemplateBinding\docs\images\README\output.png" />
+    <Content Include="Content\components\TemplateBinding\docs\images\README\templateContent.png" />
+    <Content Include="Content\components\TemplateBinding\docs\images\README\templateInstance.png" />
+    <Content Include="Content\components\TemplateBinding\docs\images\README\updateData.png" />
+    <Content Include="Content\components\TemplateBinding\examples\how_to\bind_to_attributes.html" />
+    <Content Include="Content\components\TemplateBinding\examples\how_to\bind_to_input_elements.html" />
+    <Content Include="Content\components\TemplateBinding\examples\how_to\bind_to_text.html" />
+    <Content Include="Content\components\TemplateBinding\examples\how_to\conditional_attributes.html" />
+    <Content Include="Content\components\TemplateBinding\examples\how_to\conditional_template.html" />
+    <Content Include="Content\components\TemplateBinding\examples\how_to\custom_syntax.html" />
+    <Content Include="Content\components\TemplateBinding\examples\how_to\nested_templates.html" />
+    <Content Include="Content\components\TemplateBinding\examples\how_to\recursive_templates.html" />
+    <Content Include="Content\components\TemplateBinding\examples\how_to\template_ref.html" />
+    <Content Include="Content\components\TemplateBinding\examples\tic-tac-toe.html" />
+    <Content Include="Content\components\TemplateBinding\examples\util\view_controller.js" />
+    <Content Include="Content\components\TemplateBinding\examples\util\view_controller_test.html" />
+    <Content Include="Content\components\TemplateBinding\examples\util\view_controller_test.js" />
+    <Content Include="Content\components\TemplateBinding\gruntfile.js" />
+    <Content Include="Content\components\TemplateBinding\load.js" />
+    <Content Include="Content\components\TemplateBinding\sample.html" />
+    <Content Include="Content\components\TemplateBinding\src\TemplateBinding.js" />
+    <Content Include="Content\components\TemplateBinding\src\template_element.css" />
+    <Content Include="Content\components\URL\playground.html" />
+    <Content Include="Content\components\URL\testharness.css" />
+    <Content Include="Content\components\URL\testharness.js" />
+    <Content Include="Content\components\URL\testharnessreport.js" />
+    <Content Include="Content\components\URL\url.js" />
+    <Content Include="Content\components\URL\urltestgenerator.html" />
+    <Content Include="Content\components\URL\urltestharness.html" />
+    <Content Include="Content\components\URL\urltestparser.js" />
+    <Content Include="Content\components\URL\urltestrunner.html" />
+    <Content Include="Content\components\URL\urltests.txt" />
+    <Content Include="Content\components\webcomponentsjs\banner.txt" />
+    <Content Include="Content\components\webcomponentsjs\gulpfile.js" />
+    <Content Include="Content\components\webcomponentsjs\src\CustomElements\base.js" />
+    <Content Include="Content\components\webcomponentsjs\src\CustomElements\boot.js" />
+    <Content Include="Content\components\webcomponentsjs\src\CustomElements\CustomElements.js" />
+    <Content Include="Content\components\webcomponentsjs\src\CustomElements\observe.js" />
+    <Content Include="Content\components\webcomponentsjs\src\CustomElements\register.js" />
+    <Content Include="Content\components\webcomponentsjs\src\CustomElements\traverse.js" />
+    <Content Include="Content\components\webcomponentsjs\src\CustomElements\upgrade.js" />
+    <Content Include="Content\components\webcomponentsjs\src\HTMLImports\base.js" />
+    <Content Include="Content\components\webcomponentsjs\src\HTMLImports\boot.js" />
+    <Content Include="Content\components\webcomponentsjs\src\HTMLImports\dynamic.js" />
+    <Content Include="Content\components\webcomponentsjs\src\HTMLImports\HTMLImports.js" />
+    <Content Include="Content\components\webcomponentsjs\src\HTMLImports\importer.js" />
+    <Content Include="Content\components\webcomponentsjs\src\HTMLImports\Loader.js" />
+    <Content Include="Content\components\webcomponentsjs\src\HTMLImports\module.js" />
+    <Content Include="Content\components\webcomponentsjs\src\HTMLImports\Observer.js" />
+    <Content Include="Content\components\webcomponentsjs\src\HTMLImports\parser.js" />
+    <Content Include="Content\components\webcomponentsjs\src\HTMLImports\path.js" />
+    <Content Include="Content\components\webcomponentsjs\src\HTMLImports\xhr.js" />
+    <Content Include="Content\components\webcomponentsjs\src\MutationObserver\MutationObserver.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowCSS\ShadowCSS.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\ArraySplice.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\microtask.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\MutationObserver.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\querySelector.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\ShadowDOM.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\ShadowRenderer.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\TreeScope.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\CanvasRenderingContext2D.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\CharacterData.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\DataTransfer.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\Document.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\DOMTokenList.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\Element.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\elements-with-form-property.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\events.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\FormData.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\generic.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLAudioElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLCanvasElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLCollection.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLContentElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLFormElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLImageElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLMediaElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLOptionElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLSelectElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLShadowElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLTableElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLTableRowElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLTableSectionElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLTemplateElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLUnknownElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\node-interfaces.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\Node.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\NodeList.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\override-constructors.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\Range.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\Selection.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\ShadowRoot.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\SVGElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\SVGElementInstance.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\SVGUseElement.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\Text.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\TouchEvent.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\WebGLRenderingContext.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\Window.js" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\wrappers\XMLHttpRequest.js" />
+    <Content Include="Content\components\webcomponentsjs\src\Template\Template.js" />
+    <Content Include="Content\components\webcomponentsjs\src\WeakMap\WeakMap.js" />
+    <Content Include="Content\components\webcomponentsjs\src\WebComponents\bc.js" />
+    <Content Include="Content\components\webcomponentsjs\src\WebComponents\build\boot.js" />
+    <Content Include="Content\components\webcomponentsjs\src\WebComponents\build\else.js" />
+    <Content Include="Content\components\webcomponentsjs\src\WebComponents\build\end-if.js" />
+    <Content Include="Content\components\webcomponentsjs\src\WebComponents\build\if-poly.js" />
+    <Content Include="Content\components\webcomponentsjs\src\WebComponents\dom.js" />
+    <Content Include="Content\components\webcomponentsjs\src\WebComponents\lang.js" />
+    <Content Include="Content\components\webcomponentsjs\src\WebComponents\shadowdom.js" />
+    <Content Include="Content\components\webcomponentsjs\src\WebComponents\unresolved.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\html\attributes.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\html\customevent-detail.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\html\imports.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\html\shadowdom.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\html\upgrade-dcl.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\html\upgrade-order.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\js\customElements.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\js\documentRegister.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\js\karma-defer-tests.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\js\observe.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\js\upgrade.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\runner.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\CustomElements\tests.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\base\load-base.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\csp.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\csp.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\currentScript.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\customevent-detail.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\dedupe.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\dynamic-elements.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\dynamic.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\encoding.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\HTMLImports.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\HTMLImportsLoaded-native.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\abs.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\csp-import-1.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\csp-import-2.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\csp-script-1.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\csp-script-2.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\current-script.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\dedupe.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\dynamic-elements-import.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\encoding-import.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\external-script.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\google.png" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\import-1-1.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\import-1-2.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\import-1-3.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\import-1.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\load-1.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\load-2.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\load-a.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\load-b.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\load-c.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\load-d.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\parsed-import-1.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\parsed-import-2.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\script-1.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\script-2.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\sheet1.css" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\sheet2.css" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\sheet3.css" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\style-elements-import.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\style-links-import.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\style-paths-import.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\styles.css" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\imports\template-import.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\load-404.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\load-loop.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\load.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\parser.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\redirect\imports\load.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\redirect\imports\redirect\googley.png" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\redirect\imports\redirect\load.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\redirect\load-redirect.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\style-links.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\style-paths.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\html\template-script.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\runner.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\HTMLImports\tests.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\MutationObservers\attributes.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\MutationObservers\callback.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\MutationObservers\characterData.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\MutationObservers\childList.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\MutationObservers\mixed.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\MutationObservers\runner.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\MutationObservers\transient.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\runner.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\assets\google.png" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\before-content.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\colon-host.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\combinators-import.css" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\combinators-import.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\combinators-shadow-import.css" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\combinators-shadow-import.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\combinators-shadow.css" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\combinators-shadow.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\combinators.css" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\combinators.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\compressed.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\css-animation.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\imports\sheet1.css" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\imports\sheet2.css" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\imports\style-import.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\polyfill-directive.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\polyfill-rule.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\pseudo-scoping-strict.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\pseudo-scoping.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\register.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\html\style-import.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\runner.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowCSS\tests.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\html\document-body-inner-html.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\html\document-body-shadow-root.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\html\document-write.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\html\head-then-body.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\html\on-load-test.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\html\on-unload-test.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\build-json.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\ChildNodeInterface.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\Comment.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\createTable.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\custom-element.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\Document.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\DOMTokenList.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\Element.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\events.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\FormData.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLAudioElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLBodyElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLButtonElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLCanvasElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLContentElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLFieldSetElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLFormElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLHeadElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLHtmlElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLImageElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLInputElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLKeygenElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLLabelElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLLegendElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLObjectElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLOptionElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLOutputElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLSelectElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLShadowElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLTableElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLTableRowElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLTableSectionElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLTemplateElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\HTMLTextAreaElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\microtask.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\attributes.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\callback.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\characterData.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\childList.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\mixed.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\options.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\shadow-root.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\transient.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\Node.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\paralleltrees.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\ParentNodeInterface.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\Range.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\reprojection.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\rerender.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\Selection.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\ShadowRoot.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\SVGElement.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\SVGElementInstance.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\test.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\Text.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\TouchEvent.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\TreeScope.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\Window.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\wrappers.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\js\XMLHttpRequest.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\manual\before-unload.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\manual\setDragImage.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\runner.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\runner.min.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\ShadowDOM\tests.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\Template\html\Template.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\Template\runner.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\Template\tests.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\chai\chai.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\chai\karma.conf.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\chai\karma.sauce.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\chai\sauce.browsers.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\htmltest.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\mocha-htmltest.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\mocha\media\logo.svg" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\mocha\mocha.css" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\mocha\mocha.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\WeakMap\runner.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\ce-import.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\ce-upgrade-order.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\ce-upgradedocumenttree.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\dev-loader-swizzled.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\dev-loader.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\element-import-a.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\element-import-b.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\element-import.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\html-import-sandbox-iframe.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\html-import-sandbox.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\import-upgrade-order.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\includes\import-file.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\includes\strawkit.js" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\jquery-shadowdom-polyfill.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\loader-forcepoly.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\smoke.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\strawkit.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\html\web-components.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\runner.html" />
+    <Content Include="Content\components\webcomponentsjs\tests\WebComponents\tests.js" />
+    <Content Include="Content\components\webcomponentsjs\webcomponents-lite.js" />
+    <Content Include="Content\components\webcomponentsjs\webcomponents.js" />
+    <Content Include="Content\components\webcomponentsjs\workbench\ie10-task-flaking.html" />
+    <Content Include="Content\css\Upgrade.less" />
+    <Content Include="Content\images\dashboard.png" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Layout.js" />
+    <Content Include="webapp\components\core-a11y-keys\core-a11y-keys.html" />
+    <Content Include="webapp\components\core-a11y-keys\core-a11y-keys.js" />
+    <Content Include="webapp\components\core-a11y-keys\demo.html" />
+    <Content Include="webapp\components\core-a11y-keys\index.html" />
+    <Content Include="webapp\components\core-component-page\bowager-logo.png" />
+    <Content Include="webapp\components\core-component-page\core-component-page.html" />
+    <Content Include="webapp\components\core-component-page\demo.html" />
+    <Content Include="webapp\components\core-component-page\index.html" />
+    <Content Include="webapp\components\core-dropdown-menu\core-dropdown-menu.html" />
+    <Content Include="webapp\components\core-dropdown-menu\core-dropdown-menu.js" />
+    <Content Include="webapp\components\core-dropdown-menu\demo.html" />
+    <Content Include="webapp\components\core-dropdown-menu\index.html" />
+    <Content Include="webapp\components\core-dropdown-menu\test\a11y.html" />
+    <Content Include="webapp\components\core-dropdown-menu\test\basic.html" />
+    <Content Include="webapp\components\core-dropdown-menu\test\index.html" />
+    <Content Include="webapp\components\core-dropdown\core-dropdown-base.html" />
+    <Content Include="webapp\components\core-dropdown\core-dropdown-base.js" />
+    <Content Include="webapp\components\core-dropdown\core-dropdown.html" />
+    <Content Include="webapp\components\core-dropdown\core-dropdown.js" />
+    <Content Include="webapp\components\core-dropdown\demo.html" />
+    <Content Include="webapp\components\core-dropdown\index.html" />
+    <Content Include="webapp\components\core-dropdown\test\basic.html" />
+    <Content Include="webapp\components\core-dropdown\test\index.html" />
+    <Content Include="webapp\components\core-focusable\core-focusable.html" />
+    <Content Include="webapp\components\core-focusable\core-focusable.js" />
+    <Content Include="webapp\components\core-focusable\demo.html" />
+    <Content Include="webapp\components\core-focusable\polymer-mixin.js" />
+    <Content Include="webapp\components\core-header-panel\core-header-panel.css" />
+    <Content Include="webapp\components\core-header-panel\core-header-panel.html" />
+    <Content Include="webapp\components\core-header-panel\core-header-panel.js" />
+    <Content Include="webapp\components\core-header-panel\demo.html" />
+    <Content Include="webapp\components\core-header-panel\index.html" />
+    <Content Include="webapp\components\core-header-panel\metadata.html" />
+    <Content Include="webapp\components\core-icon-button\core-icon-button.css" />
+    <Content Include="webapp\components\core-icon-button\core-icon-button.html" />
+    <Content Include="webapp\components\core-icon-button\core-icon-button.js" />
+    <Content Include="webapp\components\core-icon-button\demo.html" />
+    <Content Include="webapp\components\core-icon-button\index.html" />
+    <Content Include="webapp\components\core-icon-button\metadata.html" />
+    <Content Include="webapp\components\core-iconset-svg\core-iconset-svg.html" />
+    <Content Include="webapp\components\core-iconset-svg\core-iconset-svg.js" />
+    <Content Include="webapp\components\core-iconset-svg\demo.html" />
+    <Content Include="webapp\components\core-iconset-svg\index.html" />
+    <Content Include="webapp\components\core-iconset-svg\svg-sample-icons.html" />
+    <Content Include="webapp\components\core-iconset\core-iconset.html" />
+    <Content Include="webapp\components\core-iconset\core-iconset.js" />
+    <Content Include="webapp\components\core-iconset\demo.html" />
+    <Content Include="webapp\components\core-iconset\index.html" />
+    <Content Include="webapp\components\core-iconset\my-icons-big.png" />
+    <Content Include="webapp\components\core-iconset\my-icons.png" />
+    <Content Include="webapp\components\core-icons\av-icons.html" />
+    <Content Include="webapp\components\core-icons\communication-icons.html" />
+    <Content Include="webapp\components\core-icons\core-icons.html" />
+    <Content Include="webapp\components\core-icons\demo.html" />
+    <Content Include="webapp\components\core-icons\device-icons.html" />
+    <Content Include="webapp\components\core-icons\editor-icons.html" />
+    <Content Include="webapp\components\core-icons\hardware-icons.html" />
+    <Content Include="webapp\components\core-icons\image-icons.html" />
+    <Content Include="webapp\components\core-icons\index.html" />
+    <Content Include="webapp\components\core-icons\maps-icons.html" />
+    <Content Include="webapp\components\core-icons\notification-icons.html" />
+    <Content Include="webapp\components\core-icons\png-icons.html" />
+    <Content Include="webapp\components\core-icons\social-icons.html" />
+    <Content Include="webapp\components\core-icon\core-icon.css" />
+    <Content Include="webapp\components\core-icon\core-icon.html" />
+    <Content Include="webapp\components\core-icon\core-icon.js" />
+    <Content Include="webapp\components\core-icon\demo.html" />
+    <Content Include="webapp\components\core-icon\index.html" />
+    <Content Include="webapp\components\core-icon\metadata.html" />
+    <Content Include="webapp\components\core-input\core-input.css" />
+    <Content Include="webapp\components\core-input\core-input.html" />
+    <Content Include="webapp\components\core-input\core-input.js" />
+    <Content Include="webapp\components\core-input\demo.html" />
+    <Content Include="webapp\components\core-input\index.html" />
+    <Content Include="webapp\components\core-input\metadata.html" />
+    <Content Include="webapp\components\core-input\test\a11y.html" />
+    <Content Include="webapp\components\core-input\test\basic.html" />
+    <Content Include="webapp\components\core-input\test\index.html" />
+    <Content Include="webapp\components\core-item\core-item.css" />
+    <Content Include="webapp\components\core-item\core-item.html" />
+    <Content Include="webapp\components\core-item\core-item.js" />
+    <Content Include="webapp\components\core-item\demo.html" />
+    <Content Include="webapp\components\core-item\index.html" />
+    <Content Include="webapp\components\core-item\metadata.html" />
+    <Content Include="webapp\components\core-menu-button\core-menu-button.html" />
+    <Content Include="webapp\components\core-menu-button\demo.html" />
+    <Content Include="webapp\components\core-menu-button\index.html" />
+    <Content Include="webapp\components\core-menu-button\metadata.html" />
+    <Content Include="webapp\components\core-menu-button\test\basic.html" />
+    <Content Include="webapp\components\core-menu-button\test\index.html" />
+    <Content Include="webapp\components\core-menu\core-menu.css" />
+    <Content Include="webapp\components\core-menu\core-menu.html" />
+    <Content Include="webapp\components\core-menu\core-submenu.css" />
+    <Content Include="webapp\components\core-menu\core-submenu.html" />
+    <Content Include="webapp\components\core-menu\demo.html" />
+    <Content Include="webapp\components\core-menu\index.html" />
+    <Content Include="webapp\components\core-menu\metadata.html" />
+    <Content Include="webapp\components\core-meta\core-meta.html" />
+    <Content Include="webapp\components\core-meta\core-meta.js" />
+    <Content Include="webapp\components\core-meta\demo.html" />
+    <Content Include="webapp\components\core-meta\index.html" />
+    <Content Include="webapp\components\core-range\core-range.html" />
+    <Content Include="webapp\components\core-range\core-range.js" />
+    <Content Include="webapp\components\core-range\demo.html" />
+    <Content Include="webapp\components\core-range\index.html" />
+    <Content Include="webapp\components\core-range\test\basic.html" />
+    <Content Include="webapp\components\core-range\test\index.html" />
+    <Content Include="webapp\components\core-selection\core-selection.html" />
+    <Content Include="webapp\components\core-selection\core-selection.js" />
+    <Content Include="webapp\components\core-selection\demo.html" />
+    <Content Include="webapp\components\core-selection\index.html" />
+    <Content Include="webapp\components\core-selection\test\basic.html" />
+    <Content Include="webapp\components\core-selection\test\index.html" />
+    <Content Include="webapp\components\core-selection\test\multi.html" />
+    <Content Include="webapp\components\core-selector\core-selector.html" />
+    <Content Include="webapp\components\core-selector\core-selector.js" />
+    <Content Include="webapp\components\core-selector\demo.html" />
+    <Content Include="webapp\components\core-selector\index.html" />
+    <Content Include="webapp\components\core-selector\metadata.html" />
+    <Content Include="webapp\components\core-selector\test\activate-event.html" />
+    <Content Include="webapp\components\core-selector\test\basic.html" />
+    <Content Include="webapp\components\core-selector\test\content.html" />
+    <Content Include="webapp\components\core-selector\test\index.html" />
+    <Content Include="webapp\components\core-selector\test\multi.html" />
+    <Content Include="webapp\components\core-selector\test\next-previous.html" />
+    <Content Include="webapp\components\core-selector\test\selected-attr-prop.html" />
+    <Content Include="webapp\components\core-selector\test\template-repeat.html" />
+    <Content Include="webapp\components\core-style\core-style.html" />
+    <Content Include="webapp\components\core-style\core-style.js" />
+    <Content Include="webapp\components\core-style\demo.html" />
+    <Content Include="webapp\components\core-style\elements.html" />
+    <Content Include="webapp\components\core-style\index.html" />
+    <Content Include="webapp\components\core-style\my-theme.html" />
+    <Content Include="webapp\components\core-toolbar\core-toolbar.css" />
+    <Content Include="webapp\components\core-toolbar\core-toolbar.html" />
+    <Content Include="webapp\components\core-toolbar\core-toolbar.js" />
+    <Content Include="webapp\components\core-toolbar\demo.html" />
+    <Content Include="webapp\components\core-toolbar\index.html" />
+    <Content Include="webapp\components\core-toolbar\metadata.html" />
+    <Content Include="webapp\components\core-toolbar\test\basic.html" />
+    <Content Include="webapp\components\core-toolbar\test\index.html" />
+    <Content Include="webapp\components\NodeBind\conf\karma.conf.js" />
+    <Content Include="webapp\components\NodeBind\conf\mocha.conf.js" />
+    <Content Include="webapp\components\NodeBind\gruntfile.js" />
+    <Content Include="webapp\components\NodeBind\src\NodeBind.js" />
+    <Content Include="webapp\components\observe-js\benchmark\benchmark.js" />
+    <Content Include="webapp\components\observe-js\benchmark\d8_benchmarks.js" />
+    <Content Include="webapp\components\observe-js\benchmark\index.html" />
+    <Content Include="webapp\components\observe-js\benchmark\observation_benchmark.js" />
+    <Content Include="webapp\components\observe-js\conf\karma.conf.js" />
+    <Content Include="webapp\components\observe-js\conf\mocha.conf.js" />
+    <Content Include="webapp\components\observe-js\examples\circles.html" />
+    <Content Include="webapp\components\observe-js\examples\constrain.html" />
+    <Content Include="webapp\components\observe-js\examples\constrain.js" />
+    <Content Include="webapp\components\observe-js\examples\persist.html" />
+    <Content Include="webapp\components\observe-js\examples\persist.js" />
+    <Content Include="webapp\components\observe-js\gruntfile.js" />
+    <Content Include="webapp\components\observe-js\index.html" />
+    <Content Include="webapp\components\observe-js\src\observe.js" />
+    <Content Include="webapp\components\observe-js\util\planner.js" />
+    <Content Include="webapp\components\paper-button\demo.html" />
+    <Content Include="webapp\components\paper-button\index.html" />
+    <Content Include="webapp\components\paper-button\metadata.html" />
+    <Content Include="webapp\components\paper-button\paper-button-base.html" />
+    <Content Include="webapp\components\paper-button\paper-button-base.js" />
+    <Content Include="webapp\components\paper-button\paper-button.html" />
+    <Content Include="webapp\components\paper-button\paper-button.js" />
+    <Content Include="webapp\components\paper-button\test\a11y.html" />
+    <Content Include="webapp\components\paper-button\test\basic.html" />
+    <Content Include="webapp\components\paper-button\test\index.html" />
+    <Content Include="webapp\components\paper-checkbox\demo.html" />
+    <Content Include="webapp\components\paper-checkbox\index.html" />
+    <Content Include="webapp\components\paper-checkbox\metadata.html" />
+    <Content Include="webapp\components\paper-checkbox\paper-checkbox.css" />
+    <Content Include="webapp\components\paper-checkbox\paper-checkbox.html" />
+    <Content Include="webapp\components\paper-checkbox\paper-checkbox.js" />
+    <Content Include="webapp\components\paper-dialog\demo.html" />
+    <Content Include="webapp\components\paper-dialog\index.html" />
+    <Content Include="webapp\components\paper-dialog\paper-action-dialog.html" />
+    <Content Include="webapp\components\paper-dialog\paper-dialog-base.html" />
+    <Content Include="webapp\components\paper-dialog\paper-dialog-base.js" />
+    <Content Include="webapp\components\paper-dialog\paper-dialog-transition.css" />
+    <Content Include="webapp\components\paper-dialog\paper-dialog-transition.html" />
+    <Content Include="webapp\components\paper-dialog\paper-dialog.html" />
+    <Content Include="webapp\components\paper-dialog\test\basic.html" />
+    <Content Include="webapp\components\paper-fab\demo.html" />
+    <Content Include="webapp\components\paper-fab\index.html" />
+    <Content Include="webapp\components\paper-fab\metadata.html" />
+    <Content Include="webapp\components\paper-fab\paper-fab.html" />
+    <Content Include="webapp\components\paper-fab\paper-fab.js" />
+    <Content Include="webapp\components\paper-fab\test\a11y.html" />
+    <Content Include="webapp\components\paper-fab\test\basic.html" />
+    <Content Include="webapp\components\paper-fab\test\index.html" />
+    <Content Include="webapp\components\paper-icon-button\demo.html" />
+    <Content Include="webapp\components\paper-icon-button\index.html" />
+    <Content Include="webapp\components\paper-icon-button\metadata.html" />
+    <Content Include="webapp\components\paper-icon-button\paper-icon-button.html" />
+    <Content Include="webapp\components\paper-icon-button\paper-icon-button.js" />
+    <Content Include="webapp\components\paper-icon-button\test\a11y.html" />
+    <Content Include="webapp\components\paper-icon-button\test\basic.html" />
+    <Content Include="webapp\components\paper-icon-button\test\index.html" />
+    <Content Include="webapp\components\paper-input\demo.html" />
+    <Content Include="webapp\components\paper-input\index.html" />
+    <Content Include="webapp\components\paper-input\metadata.html" />
+    <Content Include="webapp\components\paper-input\paper-autogrow-textarea-first.js" />
+    <Content Include="webapp\components\paper-input\paper-autogrow-textarea-second.js" />
+    <Content Include="webapp\components\paper-input\paper-autogrow-textarea.html" />
+    <Content Include="webapp\components\paper-input\paper-input-decorator.css" />
+    <Content Include="webapp\components\paper-input\paper-input-decorator.html" />
+    <Content Include="webapp\components\paper-input\paper-input-decorator.js" />
+    <Content Include="webapp\components\paper-input\paper-input.html" />
+    <Content Include="webapp\components\paper-input\paper-input.js" />
+    <Content Include="webapp\components\paper-input\test\a11y.html" />
+    <Content Include="webapp\components\paper-input\test\autogrow.html" />
+    <Content Include="webapp\components\paper-input\test\decorator.html" />
+    <Content Include="webapp\components\paper-input\test\index.html" />
+    <Content Include="webapp\components\paper-progress\demo.html" />
+    <Content Include="webapp\components\paper-progress\index.html" />
+    <Content Include="webapp\components\paper-progress\metadata.html" />
+    <Content Include="webapp\components\paper-progress\paper-progress.css" />
+    <Content Include="webapp\components\paper-progress\paper-progress.html" />
+    <Content Include="webapp\components\paper-progress\paper-progress.js" />
+    <Content Include="webapp\components\paper-radio-button\demo.html" />
+    <Content Include="webapp\components\paper-radio-button\index.html" />
+    <Content Include="webapp\components\paper-radio-button\metadata.html" />
+    <Content Include="webapp\components\paper-radio-button\paper-radio-button.css" />
+    <Content Include="webapp\components\paper-radio-button\paper-radio-button.html" />
+    <Content Include="webapp\components\paper-radio-button\paper-radio-button.js" />
+    <Content Include="webapp\components\paper-radio-group\demo.html" />
+    <Content Include="webapp\components\paper-radio-group\index.html" />
+    <Content Include="webapp\components\paper-radio-group\metadata.html" />
+    <Content Include="webapp\components\paper-radio-group\paper-radio-group.html" />
+    <Content Include="webapp\components\paper-radio-group\paper-radio-group.js" />
+    <Content Include="webapp\components\paper-ripple\demo.html" />
+    <Content Include="webapp\components\paper-ripple\index.html" />
+    <Content Include="webapp\components\paper-ripple\metadata.html" />
+    <Content Include="webapp\components\paper-ripple\paper-ripple.html" />
+    <Content Include="webapp\components\paper-ripple\paper-ripple.js" />
+    <Content Include="webapp\components\paper-ripple\test\index.html" />
+    <Content Include="webapp\components\paper-ripple\test\position.html" />
+    <Content Include="webapp\components\paper-shadow\demo.html" />
+    <Content Include="webapp\components\paper-shadow\index.html" />
+    <Content Include="webapp\components\paper-shadow\metadata.html" />
+    <Content Include="webapp\components\paper-shadow\paper-shadow.css" />
+    <Content Include="webapp\components\paper-shadow\paper-shadow.html" />
+    <Content Include="webapp\components\paper-shadow\paper-shadow.js" />
+    <Content Include="webapp\components\paper-shadow\test\basic.html" />
+    <Content Include="webapp\components\paper-shadow\test\index.html" />
+    <Content Include="webapp\components\paper-slider\demo.html" />
+    <Content Include="webapp\components\paper-slider\index.html" />
+    <Content Include="webapp\components\paper-slider\metadata.html" />
+    <Content Include="webapp\components\paper-slider\paper-slider.css" />
+    <Content Include="webapp\components\paper-slider\paper-slider.html" />
+    <Content Include="webapp\components\paper-slider\paper-slider.js" />
+    <Content Include="webapp\components\polymer-expressions\conf\karma.conf.js" />
+    <Content Include="webapp\components\polymer-expressions\conf\mocha.conf.js" />
+    <Content Include="webapp\components\polymer-expressions\gruntfile.js" />
+    <Content Include="webapp\components\polymer-expressions\index.html" />
+    <Content Include="webapp\components\polymer-expressions\polymer-expressions.html" />
+    <Content Include="webapp\components\polymer-expressions\smoke.html" />
+    <Content Include="webapp\components\polymer-expressions\src\polymer-expressions.js" />
+    <Content Include="webapp\components\polymer-expressions\third_party\esprima\esprima.js" />
+    <Content Include="webapp\components\polymer-gestures\banner.txt" />
+    <Content Include="webapp\components\polymer-gestures\conf\karma.conf.js" />
+    <Content Include="webapp\components\polymer-gestures\Gruntfile.js" />
+    <Content Include="webapp\components\polymer-gestures\polymer-gestures.html" />
+    <Content Include="webapp\components\polymer-gestures\polymer-gestures.js" />
+    <Content Include="webapp\components\polymer-gestures\samples\pinch\index.html" />
+    <Content Include="webapp\components\polymer-gestures\samples\simple\index.html" />
+    <Content Include="webapp\components\polymer-gestures\src\dispatcher.js" />
+    <Content Include="webapp\components\polymer-gestures\src\eventFactory.js" />
+    <Content Include="webapp\components\polymer-gestures\src\hold.js" />
+    <Content Include="webapp\components\polymer-gestures\src\mouse.js" />
+    <Content Include="webapp\components\polymer-gestures\src\ms.js" />
+    <Content Include="webapp\components\polymer-gestures\src\pinch.js" />
+    <Content Include="webapp\components\polymer-gestures\src\platform-events.js" />
+    <Content Include="webapp\components\polymer-gestures\src\pointer.js" />
+    <Content Include="webapp\components\polymer-gestures\src\pointermap.js" />
+    <Content Include="webapp\components\polymer-gestures\src\scope.js" />
+    <Content Include="webapp\components\polymer-gestures\src\tap.js" />
+    <Content Include="webapp\components\polymer-gestures\src\targetfind.js" />
+    <Content Include="webapp\components\polymer-gestures\src\touch-action.js" />
+    <Content Include="webapp\components\polymer-gestures\src\touch.js" />
+    <Content Include="webapp\components\polymer-gestures\src\track.js" />
+    <Content Include="webapp\components\polymer-gestures\test\html\content-handler.html" />
+    <Content Include="webapp\components\polymer-gestures\test\html\focus.html" />
+    <Content Include="webapp\components\polymer-gestures\test\html\ghostclick.html" />
+    <Content Include="webapp\components\polymer-gestures\test\js\eventListeners.js" />
+    <Content Include="webapp\components\polymer-gestures\test\js\fake.js" />
+    <Content Include="webapp\components\polymer-gestures\test\js\gestures.js" />
+    <Content Include="webapp\components\polymer-gestures\test\js\pointermap.js" />
+    <Content Include="webapp\components\polymer-gestures\test\js\setup.js" />
+    <Content Include="webapp\components\polymer-gestures\test\runner.html" />
+    <Content Include="webapp\components\polymer\banner.txt" />
+    <Content Include="webapp\components\polymer\conf\karma.conf.js" />
+    <Content Include="webapp\components\polymer\conf\mocha.conf.js" />
+    <Content Include="webapp\components\polymer\dist\polymer.html" />
+    <Content Include="webapp\components\polymer\gruntfile.js" />
+    <Content Include="webapp\components\polymer\index.html" />
+    <Content Include="webapp\components\polymer\layout.html" />
+    <Content Include="webapp\components\polymer\polymer-first.js" />
+    <Content Include="webapp\components\polymer\polymer.html" />
+    <Content Include="webapp\components\polymer\src\api.js" />
+    <Content Include="webapp\components\polymer\src\boot.js" />
+    <Content Include="webapp\components\polymer\src\declaration\attributes.js" />
+    <Content Include="webapp\components\polymer\src\declaration\events.js" />
+    <Content Include="webapp\components\polymer\src\declaration\mdv.js" />
+    <Content Include="webapp\components\polymer\src\declaration\path.js" />
+    <Content Include="webapp\components\polymer\src\declaration\polymer-element.js" />
+    <Content Include="webapp\components\polymer\src\declaration\polymer.js" />
+    <Content Include="webapp\components\polymer\src\declaration\properties.js" />
+    <Content Include="webapp\components\polymer\src\declaration\prototype.js" />
+    <Content Include="webapp\components\polymer\src\declaration\queue.js" />
+    <Content Include="webapp\components\polymer\src\declaration\styles.js" />
+    <Content Include="webapp\components\polymer\src\instance\attributes.js" />
+    <Content Include="webapp\components\polymer\src\instance\base.js" />
+    <Content Include="webapp\components\polymer\src\instance\events.js" />
+    <Content Include="webapp\components\polymer\src\instance\mdv.js" />
+    <Content Include="webapp\components\polymer\src\instance\properties.js" />
+    <Content Include="webapp\components\polymer\src\instance\styles.js" />
+    <Content Include="webapp\components\polymer\src\instance\utils.js" />
+    <Content Include="webapp\components\polymer\src\lib\auto-binding.js" />
+    <Content Include="webapp\components\polymer\src\lib\deserialize.js" />
+    <Content Include="webapp\components\polymer\src\lib\dom.js" />
+    <Content Include="webapp\components\polymer\src\lib\import.js" />
+    <Content Include="webapp\components\polymer\src\lib\job.js" />
+    <Content Include="webapp\components\polymer\src\lib\lang.js" />
+    <Content Include="webapp\components\polymer\src\lib\loader.js" />
+    <Content Include="webapp\components\polymer\src\lib\styleloader.js" />
+    <Content Include="webapp\components\polymer\src\lib\super.js" />
+    <Content Include="webapp\components\polymer\src\lib\url.js" />
+    <Content Include="webapp\components\polymer\src\polymer.js" />
+    <Content Include="webapp\components\polymer\src\system\build-begin-if.js" />
+    <Content Include="webapp\components\polymer\src\system\build-end-if.js" />
+    <Content Include="webapp\components\polymer\src\system\compat.js" />
+    <Content Include="webapp\components\polymer\src\system\flush.js" />
+    <Content Include="webapp\components\polymer\src\system\HTMLImports\base.js" />
+    <Content Include="webapp\components\polymer\src\system\microtask.js" />
+    <Content Include="webapp\components\polymer\src\system\module.js" />
+    <Content Include="webapp\components\polymer\src\system\unresolved.js" />
+    <Content Include="webapp\components\polymer\test\html\async.html" />
+    <Content Include="webapp\components\polymer\test\html\attr-mustache.html" />
+    <Content Include="webapp\components\polymer\test\html\auto-binding.html" />
+    <Content Include="webapp\components\polymer\test\html\bind-object-repeat.html" />
+    <Content Include="webapp\components\polymer\test\html\bind.html" />
+    <Content Include="webapp\components\polymer\test\html\bindProperties.html" />
+    <Content Include="webapp\components\polymer\test\html\callbacks.html" />
+    <Content Include="webapp\components\polymer\test\html\computedProperties.html" />
+    <Content Include="webapp\components\polymer\test\html\ctor.html" />
+    <Content Include="webapp\components\polymer\test\html\domready.html" />
+    <Content Include="webapp\components\polymer\test\html\element-import.html" />
+    <Content Include="webapp\components\polymer\test\html\element-import\elements.js" />
+    <Content Include="webapp\components\polymer\test\html\element-import\import-a.html" />
+    <Content Include="webapp\components\polymer\test\html\element-import\import-b.html" />
+    <Content Include="webapp\components\polymer\test\html\element-import\import.html" />
+    <Content Include="webapp\components\polymer\test\html\element-import\x-quux.js" />
+    <Content Include="webapp\components\polymer\test\html\element-instanceOfType.html" />
+    <Content Include="webapp\components\polymer\test\html\element-registration.html" />
+    <Content Include="webapp\components\polymer\test\html\element-script.html" />
+    <Content Include="webapp\components\polymer\test\html\element-script\elements.js" />
+    <Content Include="webapp\components\polymer\test\html\element-script\x-quux.js" />
+    <Content Include="webapp\components\polymer\test\html\event-handlers-host.html" />
+    <Content Include="webapp\components\polymer\test\html\event-handlers-light.html" />
+    <Content Include="webapp\components\polymer\test\html\event-handlers.html" />
+    <Content Include="webapp\components\polymer\test\html\event-path-declarative.html" />
+    <Content Include="webapp\components\polymer\test\html\event-path.html" />
+    <Content Include="webapp\components\polymer\test\html\forceReady.html" />
+    <Content Include="webapp\components\polymer\test\html\import-element-nopolymer.html" />
+    <Content Include="webapp\components\polymer\test\html\import-infer-name.html" />
+    <Content Include="webapp\components\polymer\test\html\import-warning.html" />
+    <Content Include="webapp\components\polymer\test\html\infer-name-script.js" />
+    <Content Include="webapp\components\polymer\test\html\infer-name.html" />
+    <Content Include="webapp\components\polymer\test\html\layout.html" />
+    <Content Include="webapp\components\polymer\test\html\loader-deduplicate.html" />
+    <Content Include="webapp\components\polymer\test\html\mdv-shadow.html" />
+    <Content Include="webapp\components\polymer\test\html\mdv-syntax.html" />
+    <Content Include="webapp\components\polymer\test\html\mdv-tests\polymer-expressions-tests.js" />
+    <Content Include="webapp\components\polymer\test\html\mdv-tests\template-binding-tests.js" />
+    <Content Include="webapp\components\polymer\test\html\platform-less-import.html" />
+    <Content Include="webapp\components\polymer\test\html\platform-less.html" />
+    <Content Include="webapp\components\polymer\test\html\polymer-import.html" />
+    <Content Include="webapp\components\polymer\test\html\popup.html" />
+    <Content Include="webapp\components\polymer\test\html\prepare.html" />
+    <Content Include="webapp\components\polymer\test\html\prop-attr-bind-reflection.html" />
+    <Content Include="webapp\components\polymer\test\html\prop-attr-reflection.html" />
+    <Content Include="webapp\components\polymer\test\html\prop-bind-oo.html" />
+    <Content Include="webapp\components\polymer\test\html\property-array-changes.html" />
+    <Content Include="webapp\components\polymer\test\html\property-changes.html" />
+    <Content Include="webapp\components\polymer\test\html\property-observe.html" />
+    <Content Include="webapp\components\polymer\test\html\publish-attributes.html" />
+    <Content Include="webapp\components\polymer\test\html\reflection.html" />
+    <Content Include="webapp\components\polymer\test\html\resolvePath.html" />
+    <Content Include="webapp\components\polymer\test\html\resolve\x-resolve-import.html" />
+    <Content Include="webapp\components\polymer\test\html\shadowroots.html" />
+    <Content Include="webapp\components\polymer\test\html\styling\recursive-style-import.html" />
+    <Content Include="webapp\components\polymer\test\html\styling\rules\ce-style-import.html" />
+    <Content Include="webapp\components\polymer\test\html\styling\rules\coloring\border.css" />
+    <Content Include="webapp\components\polymer\test\html\styling\rules\coloring\colors.css" />
+    <Content Include="webapp\components\polymer\test\html\styling\rules\coloring\foreground.css" />
+    <Content Include="webapp\components\polymer\test\html\styling\rules\colors.css" />
+    <Content Include="webapp\components\polymer\test\html\styling\rules\sizing.css" />
+    <Content Include="webapp\components\polymer\test\html\styling\rules\sizing\height.css" />
+    <Content Include="webapp\components\polymer\test\html\styling\rules\sizing\hw.css" />
+    <Content Include="webapp\components\polymer\test\html\styling\rules\sizing\width.css" />
+    <Content Include="webapp\components\polymer\test\html\styling\rules\translation.css" />
+    <Content Include="webapp\components\polymer\test\html\styling\rules\translations\2d.css" />
+    <Content Include="webapp\components\polymer\test\html\styling\sheet-main-doc.html" />
+    <Content Include="webapp\components\polymer\test\html\styling\sheet-order.html" />
+    <Content Include="webapp\components\polymer\test\html\styling\sheet-scope.html" />
+    <Content Include="webapp\components\polymer\test\html\styling\sheet1.css" />
+    <Content Include="webapp\components\polymer\test\html\styling\sheet2.css" />
+    <Content Include="webapp\components\polymer\test\html\styling\unresolved.html" />
+    <Content Include="webapp\components\polymer\test\html\styling\x-sheet-main-doc.html" />
+    <Content Include="webapp\components\polymer\test\html\styling\x-sheets.html" />
+    <Content Include="webapp\components\polymer\test\html\take-attributes.html" />
+    <Content Include="webapp\components\polymer\test\html\template-attr-template-import.html" />
+    <Content Include="webapp\components\polymer\test\html\template-attr-template.html" />
+    <Content Include="webapp\components\polymer\test\html\template-distribute-dynamic.html" />
+    <Content Include="webapp\components\polymer\test\html\template-repeat-wrappers.html" />
+    <Content Include="webapp\components\polymer\test\html\unbind.html" />
+    <Content Include="webapp\components\polymer\test\html\url.html" />
+    <Content Include="webapp\components\polymer\test\html\visibility.html" />
+    <Content Include="webapp\components\polymer\test\index.html" />
+    <Content Include="webapp\components\polymer\test\js\attrs.js" />
+    <Content Include="webapp\components\polymer\test\js\bindMDV.js" />
+    <Content Include="webapp\components\polymer\test\js\events.js" />
+    <Content Include="webapp\components\polymer\test\js\marshall.js" />
+    <Content Include="webapp\components\polymer\test\js\oop.js" />
+    <Content Include="webapp\components\polymer\test\js\paths.js" />
+    <Content Include="webapp\components\polymer\test\js\register.js" />
+    <Content Include="webapp\components\polymer\test\lib\htmltest.js" />
+    <Content Include="webapp\components\polymer\test\lib\karma-include-polymer.js" />
+    <Content Include="webapp\components\polymer\test\lib\mocha-htmltest.js" />
+    <Content Include="webapp\components\polymer\workbench\events\index.html" />
+    <Content Include="webapp\components\polymer\workbench\images\add.png" />
+    <Content Include="webapp\components\polymer\workbench\images\comment.png" />
+    <Content Include="webapp\components\polymer\workbench\images\favorite.png" />
+    <Content Include="webapp\components\polymer\workbench\images\hangout.png" />
+    <Content Include="webapp\components\polymer\workbench\images\mail.png" />
+    <Content Include="webapp\components\polymer\workbench\images\menu.png" />
+    <Content Include="webapp\components\polymer\workbench\images\ribbon_accounts.png" />
+    <Content Include="webapp\components\polymer\workbench\images\ribbon_explore.png" />
+    <Content Include="webapp\components\polymer\workbench\images\ribbon_home.png" />
+    <Content Include="webapp\components\polymer\workbench\images\ribbon_topics.png" />
+    <Content Include="webapp\components\polymer\workbench\images\star_full.svg" />
+    <Content Include="webapp\components\polymer\workbench\mdv\memory-compound.html" />
+    <Content Include="webapp\components\polymer\workbench\mdv\memory-manual.html" />
+    <Content Include="webapp\components\polymer\workbench\mdv\memory-no-insert.html" />
+    <Content Include="webapp\components\polymer\workbench\mdv\memory.html" />
+    <Content Include="webapp\components\polymer\workbench\moreSmoke\index.html" />
+    <Content Include="webapp\components\polymer\workbench\moreSmoke\x-foo.css" />
+    <Content Include="webapp\components\polymer\workbench\null\index.html" />
+    <Content Include="webapp\components\polymer\workbench\oldSmoke\index.html" />
+    <Content Include="webapp\components\polymer\workbench\oldSmoke\x-bar.html" />
+    <Content Include="webapp\components\polymer\workbench\oldSmoke\x-foo.html" />
+    <Content Include="webapp\components\polymer\workbench\oldSmoke\x-zot.html" />
+    <Content Include="webapp\components\polymer\workbench\oop\class.html" />
+    <Content Include="webapp\components\polymer\workbench\oop\extend.html" />
+    <Content Include="webapp\components\polymer\workbench\oop\node-class.html" />
+    <Content Include="webapp\components\polymer\workbench\oop\plain.html" />
+    <Content Include="webapp\components\polymer\workbench\oop\super.html" />
+    <Content Include="webapp\components\polymer\workbench\register\register.html" />
+    <Content Include="webapp\components\polymer\workbench\register\register_1.html" />
+    <Content Include="webapp\components\polymer\workbench\smoke\elements.js" />
+    <Content Include="webapp\components\polymer\workbench\smoke\index.html" />
+    <Content Include="webapp\components\polymer\workbench\smoke\x-quux.js" />
+    <Content Include="webapp\components\polymer\workbench\styling\host.css" />
+    <Content Include="webapp\components\polymer\workbench\styling\host.html" />
+    <Content Include="webapp\components\polymer\workbench\styling\zim.html" />
+    <Content Include="webapp\components\TemplateBinding\benchmark\benchmark.js" />
+    <Content Include="webapp\components\TemplateBinding\benchmark\codereview-diff.html" />
+    <Content Include="webapp\components\TemplateBinding\benchmark\d8_benchmark.js" />
+    <Content Include="webapp\components\TemplateBinding\benchmark\data.js" />
+    <Content Include="webapp\components\TemplateBinding\benchmark\dom.js" />
+    <Content Include="webapp\components\TemplateBinding\benchmark\index.html" />
+    <Content Include="webapp\components\TemplateBinding\docs\images\README\arrayUpdate.png" />
+    <Content Include="webapp\components\TemplateBinding\docs\images\README\DOM.png" />
+    <Content Include="webapp\components\TemplateBinding\docs\images\README\input.png" />
+    <Content Include="webapp\components\TemplateBinding\docs\images\README\output.png" />
+    <Content Include="webapp\components\TemplateBinding\docs\images\README\templateContent.png" />
+    <Content Include="webapp\components\TemplateBinding\docs\images\README\templateInstance.png" />
+    <Content Include="webapp\components\TemplateBinding\docs\images\README\updateData.png" />
+    <Content Include="webapp\components\TemplateBinding\examples\how_to\bind_to_attributes.html" />
+    <Content Include="webapp\components\TemplateBinding\examples\how_to\bind_to_input_elements.html" />
+    <Content Include="webapp\components\TemplateBinding\examples\how_to\bind_to_text.html" />
+    <Content Include="webapp\components\TemplateBinding\examples\how_to\conditional_attributes.html" />
+    <Content Include="webapp\components\TemplateBinding\examples\how_to\conditional_template.html" />
+    <Content Include="webapp\components\TemplateBinding\examples\how_to\custom_syntax.html" />
+    <Content Include="webapp\components\TemplateBinding\examples\how_to\nested_templates.html" />
+    <Content Include="webapp\components\TemplateBinding\examples\how_to\recursive_templates.html" />
+    <Content Include="webapp\components\TemplateBinding\examples\how_to\template_ref.html" />
+    <Content Include="webapp\components\TemplateBinding\examples\tic-tac-toe.html" />
+    <Content Include="webapp\components\TemplateBinding\examples\util\view_controller.js" />
+    <Content Include="webapp\components\TemplateBinding\examples\util\view_controller_test.html" />
+    <Content Include="webapp\components\TemplateBinding\examples\util\view_controller_test.js" />
+    <Content Include="webapp\components\TemplateBinding\gruntfile.js" />
+    <Content Include="webapp\components\TemplateBinding\load.js" />
+    <Content Include="webapp\components\TemplateBinding\sample.html" />
+    <Content Include="webapp\components\TemplateBinding\src\TemplateBinding.js" />
+    <Content Include="webapp\components\TemplateBinding\src\template_element.css" />
+    <Content Include="webapp\components\URL\playground.html" />
+    <Content Include="webapp\components\URL\testharness.css" />
+    <Content Include="webapp\components\URL\testharness.js" />
+    <Content Include="webapp\components\URL\testharnessreport.js" />
+    <Content Include="webapp\components\URL\url.js" />
+    <Content Include="webapp\components\URL\urltestgenerator.html" />
+    <Content Include="webapp\components\URL\urltestharness.html" />
+    <Content Include="webapp\components\URL\urltestparser.js" />
+    <Content Include="webapp\components\URL\urltestrunner.html" />
+    <Content Include="webapp\components\URL\urltests.txt" />
+    <Content Include="webapp\components\webcomponentsjs\banner.txt" />
+    <Content Include="webapp\components\webcomponentsjs\gulpfile.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\CustomElements\base.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\CustomElements\boot.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\CustomElements\CustomElements.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\CustomElements\observe.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\CustomElements\register.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\CustomElements\traverse.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\CustomElements\upgrade.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\HTMLImports\base.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\HTMLImports\boot.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\HTMLImports\dynamic.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\HTMLImports\HTMLImports.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\HTMLImports\importer.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\HTMLImports\Loader.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\HTMLImports\module.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\HTMLImports\Observer.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\HTMLImports\parser.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\HTMLImports\path.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\HTMLImports\xhr.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\MutationObserver\MutationObserver.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowCSS\ShadowCSS.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\ArraySplice.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\microtask.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\MutationObserver.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\querySelector.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\ShadowDOM.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\ShadowRenderer.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\TreeScope.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\CanvasRenderingContext2D.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\CharacterData.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\DataTransfer.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\Document.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\DOMTokenList.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\Element.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\elements-with-form-property.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\events.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\FormData.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\generic.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLAudioElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLCanvasElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLCollection.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLContentElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLFormElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLImageElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLMediaElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLOptionElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLSelectElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLShadowElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLTableElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLTableRowElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLTableSectionElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLTemplateElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\HTMLUnknownElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\node-interfaces.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\Node.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\NodeList.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\override-constructors.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\Range.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\Selection.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\ShadowRoot.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\SVGElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\SVGElementInstance.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\SVGUseElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\Text.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\TouchEvent.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\WebGLRenderingContext.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\Window.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\wrappers\XMLHttpRequest.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\Template\Template.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\WeakMap\WeakMap.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\WebComponents\bc.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\WebComponents\build\boot.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\WebComponents\build\else.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\WebComponents\build\end-if.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\WebComponents\build\if-poly.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\WebComponents\dom.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\WebComponents\lang.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\WebComponents\shadowdom.js" />
+    <Content Include="webapp\components\webcomponentsjs\src\WebComponents\unresolved.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\html\attributes.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\html\customevent-detail.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\html\imports.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\html\shadowdom.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\html\upgrade-dcl.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\html\upgrade-order.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\js\customElements.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\js\documentRegister.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\js\karma-defer-tests.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\js\observe.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\js\upgrade.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\runner.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\CustomElements\tests.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\base\load-base.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\csp.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\csp.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\currentScript.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\customevent-detail.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\dedupe.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\dynamic-elements.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\dynamic.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\encoding.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\HTMLImports.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\HTMLImportsLoaded-native.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\abs.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\csp-import-1.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\csp-import-2.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\csp-script-1.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\csp-script-2.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\current-script.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\dedupe.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\dynamic-elements-import.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\encoding-import.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\external-script.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\google.png" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\import-1-1.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\import-1-2.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\import-1-3.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\import-1.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\load-1.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\load-2.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\load-a.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\load-b.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\load-c.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\load-d.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\parsed-import-1.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\parsed-import-2.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\script-1.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\script-2.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\sheet1.css" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\sheet2.css" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\sheet3.css" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\style-elements-import.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\style-links-import.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\style-paths-import.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\styles.css" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\imports\template-import.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\load-404.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\load-loop.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\load.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\parser.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\redirect\imports\load.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\redirect\imports\redirect\googley.png" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\redirect\imports\redirect\load.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\redirect\load-redirect.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\style-links.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\style-paths.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\html\template-script.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\runner.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\HTMLImports\tests.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\MutationObservers\attributes.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\MutationObservers\callback.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\MutationObservers\characterData.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\MutationObservers\childList.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\MutationObservers\mixed.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\MutationObservers\runner.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\MutationObservers\transient.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\runner.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\assets\google.png" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\before-content.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\colon-host.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\combinators-import.css" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\combinators-import.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\combinators-shadow-import.css" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\combinators-shadow-import.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\combinators-shadow.css" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\combinators-shadow.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\combinators.css" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\combinators.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\compressed.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\css-animation.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\imports\sheet1.css" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\imports\sheet2.css" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\imports\style-import.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\polyfill-directive.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\polyfill-rule.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\pseudo-scoping-strict.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\pseudo-scoping.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\register.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\html\style-import.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\runner.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowCSS\tests.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\html\document-body-inner-html.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\html\document-body-shadow-root.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\html\document-write.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\html\head-then-body.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\html\on-load-test.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\html\on-unload-test.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\build-json.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\ChildNodeInterface.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\Comment.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\createTable.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\custom-element.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\Document.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\DOMTokenList.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\Element.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\events.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\FormData.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLAudioElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLBodyElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLButtonElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLCanvasElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLContentElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLFieldSetElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLFormElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLHeadElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLHtmlElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLImageElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLInputElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLKeygenElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLLabelElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLLegendElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLObjectElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLOptionElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLOutputElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLSelectElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLShadowElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLTableElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLTableRowElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLTableSectionElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLTemplateElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\HTMLTextAreaElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\microtask.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\attributes.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\callback.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\characterData.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\childList.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\mixed.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\options.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\shadow-root.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\MutationObserver\transient.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\Node.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\paralleltrees.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\ParentNodeInterface.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\Range.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\reprojection.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\rerender.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\Selection.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\ShadowRoot.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\SVGElement.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\SVGElementInstance.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\test.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\Text.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\TouchEvent.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\TreeScope.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\Window.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\wrappers.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\js\XMLHttpRequest.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\manual\before-unload.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\manual\setDragImage.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\runner.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\runner.min.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\ShadowDOM\tests.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\Template\html\Template.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\Template\runner.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\Template\tests.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\chai\chai.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\chai\karma.conf.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\chai\karma.sauce.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\chai\sauce.browsers.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\htmltest.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\mocha-htmltest.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\mocha\media\logo.svg" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\mocha\mocha.css" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\mocha\mocha.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WeakMap\runner.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\ce-import.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\ce-upgrade-order.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\ce-upgradedocumenttree.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\dev-loader-swizzled.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\dev-loader.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\element-import-a.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\element-import-b.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\element-import.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\html-import-sandbox-iframe.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\html-import-sandbox.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\import-upgrade-order.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\includes\import-file.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\includes\strawkit.js" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\jquery-shadowdom-polyfill.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\loader-forcepoly.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\smoke.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\strawkit.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\html\web-components.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\runner.html" />
+    <Content Include="webapp\components\webcomponentsjs\tests\WebComponents\tests.js" />
+    <Content Include="webapp\components\webcomponentsjs\webcomponents-lite.js" />
+    <Content Include="webapp\components\webcomponentsjs\webcomponents.js" />
+    <Content Include="webapp\components\webcomponentsjs\workbench\ie10-task-flaking.html" />
+    <Content Include="webapp\config.js" />
+    <Content Include="webapp\css\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="webapp\css\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="webapp\css\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="webapp\css\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="webapp\css\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="webapp\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="webapp\css\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="webapp\css\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="webapp\css\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="webapp\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="webapp\css\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="webapp\css\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="webapp\css\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="webapp\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="webapp\images\ajax-loader.gif" />
+    <Content Include="webapp\images\avt5.png" />
+    <Content Include="webapp\images\custom-icon.png" />
+    <Content Include="webapp\images\icon.png" />
+    <Content Include="webapp\images\issue-icon.png" />
+    <Content Include="webapp\images\scrum-icon.png" />
+    <Content Include="webapp\index.background.js" />
+    <Content Include="webapp\index.backup.html" />
+    <Content Include="webapp\index.db.js" />
+    <Content Include="webapp\index.html" />
+    <Content Include="webapp\index.js" />
+    <Content Include="webapp\js\Account.background.js" />
+    <Content Include="webapp\js\Account.index.js" />
+    <Content Include="webapp\js\background.content.hook.js" />
+    <Content Include="webapp\js\Board.Background.js" />
+    <Content Include="webapp\js\Board.data.js" />
+    <Content Include="webapp\js\Board.gui.js" />
+    <Content Include="webapp\js\Board.Index.js" />
+    <Content Include="webapp\js\Board.js" />
+    <Content Include="webapp\js\Board.sync.js" />
+    <Content Include="webapp\js\Board.ui.js" />
+    <Content Include="webapp\js\bootstrap.js" />
+    <Content Include="webapp\js\Card.action.js" />
+    <Content Include="webapp\js\Card.Background.js" />
+    <Content Include="webapp\js\Card.data.js" />
+    <Content Include="webapp\js\Card.gui.js" />
+    <Content Include="webapp\js\Card.Index.js" />
+    <Content Include="webapp\js\Card.js" />
+    <Content Include="webapp\js\Card.ui.js" />
+    <Content Include="webapp\js\Column.action.js" />
+    <Content Include="webapp\js\Column.background.js" />
+    <Content Include="webapp\js\Column.data.js" />
+    <Content Include="webapp\js\Column.index.js" />
+    <Content Include="webapp\js\Column.js" />
+    <Content Include="webapp\js\Column.ui.js" />
+    <Content Include="webapp\js\ColumnSetting.action.js" />
+    <Content Include="webapp\js\ColumnSetting.background.js" />
+    <Content Include="webapp\js\ColumnSetting.data.js" />
+    <Content Include="webapp\js\ColumnSetting.gui.js" />
+    <Content Include="webapp\js\ColumnSetting.index.js" />
+    <Content Include="webapp\js\ColumnSetting.js" />
+    <Content Include="webapp\js\ColumnSetting.ui.js" />
+    <Content Include="webapp\js\Displaying.js" />
+    <Content Include="webapp\js\jquery-ui.js" />
+    <Content Include="webapp\js\jquery.js" />
+    <Content Include="webapp\js\less.min.js" />
+    <Content Include="webapp\js\Login.js" />
+    <Content Include="webapp\js\md5.js" />
+    <Content Include="webapp\js\Pageload.js" />
+    <Content Include="webapp\js\RightPanel.Background.js" />
+    <Content Include="webapp\js\RightPanel.gui.js" />
+    <Content Include="webapp\js\RightPanel.Index.js" />
+    <Content Include="webapp\js\TimeLog.data.js" />
+    <Content Include="webapp\js\TimeLogWorker.js" />
+    <Content Include="Content\css\bootswatch.min.css" />
+    <None Include="Content\css\Login.less" />
+    <Content Include="Content\css\less.min.js" />
+    <Content Include="Content\css\zocial-regular-webfont.svg" />
+    <Content Include="Content\css\zocial.css" />
+    <Content Include="Scripts\InviteConfirm.js" />
+    <Content Include="Views\EmailTemplate\EmailConfirm.html" />
+    <Content Include="Scripts\Login.js" />
+    <Content Include="Scripts\Invite.js" />
+    <Content Include="Scripts\Register.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\components\core-a11y-keys\bower.json" />
+    <Content Include="Content\components\core-a11y-keys\README.md" />
+    <Content Include="Content\components\core-component-page\bower.json" />
+    <Content Include="Content\components\core-component-page\README.md" />
+    <Content Include="Content\components\core-dropdown\bower.json" />
+    <Content Include="Content\components\core-dropdown\README.md" />
+    <Content Include="Content\components\core-dropdown-menu\bower.json" />
+    <Content Include="Content\components\core-dropdown-menu\README.md" />
+    <Content Include="Content\components\core-focusable\.bower.json" />
+    <Content Include="Content\components\core-focusable\bower.json" />
+    <Content Include="Content\components\core-focusable\README.md" />
+    <Content Include="Content\components\core-header-panel\.bower.json" />
+    <Content Include="Content\components\core-header-panel\bower.json" />
+    <Content Include="Content\components\core-header-panel\README.md" />
+    <Content Include="Content\components\core-icon\bower.json" />
+    <Content Include="Content\components\core-icon\README.md" />
+    <Content Include="Content\components\core-icon-button\.bower.json" />
+    <Content Include="Content\components\core-icon-button\bower.json" />
+    <Content Include="Content\components\core-icon-button\README.md" />
+    <Content Include="Content\components\core-icons\.bower.json" />
+    <Content Include="Content\components\core-icons\bower.json" />
+    <Content Include="Content\components\core-icons\README.md" />
+    <Content Include="Content\components\core-iconset\.bower.json" />
+    <Content Include="Content\components\core-iconset\bower.json" />
+    <Content Include="Content\components\core-iconset\README.md" />
+    <Content Include="Content\components\core-iconset-svg\.bower.json" />
+    <Content Include="Content\components\core-iconset-svg\bower.json" />
+    <Content Include="Content\components\core-iconset-svg\README.md" />
+    <Content Include="Content\components\core-input\bower.json" />
+    <Content Include="Content\components\core-input\README.md" />
+    <Content Include="Content\components\core-item\bower.json" />
+    <Content Include="Content\components\core-item\README.md" />
+    <Content Include="Content\components\core-menu\bower.json" />
+    <Content Include="Content\components\core-menu\README.md" />
+    <Content Include="Content\components\core-menu-button\bower.json" />
+    <Content Include="Content\components\core-menu-button\README.md" />
+    <Content Include="Content\components\core-meta\.bower.json" />
+    <Content Include="Content\components\core-meta\bower.json" />
+    <Content Include="Content\components\core-meta\README.md" />
+    <Content Include="Content\components\core-range\bower.json" />
+    <Content Include="Content\components\core-range\README.md" />
+    <Content Include="Content\components\core-selection\.bower.json" />
+    <Content Include="Content\components\core-selection\bower.json" />
+    <Content Include="Content\components\core-selection\README.md" />
+    <Content Include="Content\components\core-selector\.bower.json" />
+    <Content Include="Content\components\core-selector\.gitignore" />
+    <Content Include="Content\components\core-selector\bower.json" />
+    <Content Include="Content\components\core-selector\README.md" />
+    <Content Include="Content\components\core-style\bower.json" />
+    <Content Include="Content\components\core-style\README.md" />
+    <Content Include="Content\components\core-toolbar\.bower.json" />
+    <Content Include="Content\components\core-toolbar\bower.json" />
+    <Content Include="Content\components\core-toolbar\README.md" />
+    <Content Include="Content\components\NodeBind\bower.json" />
+    <None Include="Content\components\NodeBind\codereview.settings" />
+    <Content Include="Content\components\NodeBind\package.json" />
+    <Content Include="Content\components\NodeBind\README.md" />
+    <Content Include="Content\components\observe-js\AUTHORS" />
+    <Content Include="Content\components\observe-js\bower.json" />
+    <None Include="Content\components\observe-js\codereview.settings" />
+    <Content Include="Content\components\observe-js\package.json" />
+    <Content Include="Content\components\observe-js\README.md" />
+    <Content Include="Content\components\paper-button\.bower.json" />
+    <Content Include="Content\components\paper-button\bower.json" />
+    <Content Include="Content\components\paper-button\README.md" />
+    <Content Include="Content\components\paper-checkbox\bower.json" />
+    <Content Include="Content\components\paper-checkbox\README.md" />
+    <Content Include="Content\components\paper-dialog\bower.json" />
+    <Content Include="Content\components\paper-dialog\README.md" />
+    <Content Include="Content\components\paper-icon-button\.bower.json" />
+    <Content Include="Content\components\paper-icon-button\bower.json" />
+    <Content Include="Content\components\paper-icon-button\README.md" />
+    <Content Include="Content\components\paper-input\bower.json" />
+    <Content Include="Content\components\paper-input\README.md" />
+    <Content Include="Content\components\paper-progress\bower.json" />
+    <Content Include="Content\components\paper-progress\README.md" />
+    <Content Include="Content\components\paper-radio-button\bower.json" />
+    <Content Include="Content\components\paper-radio-button\README.md" />
+    <Content Include="Content\components\paper-radio-group\bower.json" />
+    <Content Include="Content\components\paper-radio-group\README.md" />
+    <Content Include="Content\components\paper-ripple\.bower.json" />
+    <Content Include="Content\components\paper-ripple\bower.json" />
+    <Content Include="Content\components\paper-ripple\README.md" />
+    <Content Include="Content\components\paper-shadow\.bower.json" />
+    <Content Include="Content\components\paper-shadow\bower.json" />
+    <Content Include="Content\components\paper-shadow\README.md" />
+    <Content Include="Content\components\paper-slider\bower.json" />
+    <Content Include="Content\components\paper-slider\README.md" />
+    <Content Include="Content\components\polymer\bower.json" />
+    <Content Include="Content\components\polymer\build.bat" />
+    <Content Include="Content\components\polymer\build.json" />
+    <Content Include="Content\components\polymer-expressions\bower.json" />
+    <Content Include="Content\components\polymer-expressions\build.json" />
+    <None Include="Content\components\polymer-expressions\codereview.settings" />
+    <Content Include="Content\components\polymer-expressions\package.json" />
+    <Content Include="Content\components\polymer-expressions\README.md" />
+    <Content Include="Content\components\polymer-expressions\third_party\esprima\CONTRIBUTING.md" />
+    <Content Include="Content\components\polymer-expressions\third_party\esprima\LICENSE.BSD" />
+    <Content Include="Content\components\polymer-expressions\third_party\esprima\README.md" />
+    <Content Include="Content\components\polymer-gestures\bower.json" />
+    <Content Include="Content\components\polymer-gestures\build.json" />
+    <Content Include="Content\components\polymer-gestures\package.json" />
+    <Content Include="Content\components\polymer-gestures\README.md" />
+    <None Include="Content\components\polymer\codereview.settings" />
+    <Content Include="Content\components\polymer\docs.json" />
+    <Content Include="Content\components\polymer\package.json" />
+    <Content Include="Content\components\polymer\README.md" />
+    <Content Include="Content\components\TemplateBinding\bower.json" />
+    <Content Include="Content\components\TemplateBinding\build.json" />
+    <None Include="Content\components\TemplateBinding\codereview.settings" />
+    <Content Include="Content\components\TemplateBinding\package.json" />
+    <Content Include="Content\components\TemplateBinding\README.md" />
+    <Content Include="Content\components\TemplateBinding\template-instantiation.md" />
+    <Content Include="Content\components\webcomponentsjs\bower.json" />
+    <Content Include="Content\components\webcomponentsjs\CONTRIBUTING.md" />
+    <Content Include="Content\components\webcomponentsjs\package.json" />
+    <Content Include="Content\components\webcomponentsjs\README.md" />
+    <Content Include="Content\components\webcomponentsjs\src\CustomElements\build.json" />
+    <Content Include="Content\components\webcomponentsjs\src\HTMLImports\build.json" />
+    <Content Include="Content\components\webcomponentsjs\src\ShadowDOM\build.json" />
+    <Content Include="Content\components\webcomponentsjs\src\WebComponents\build-lite.json" />
+    <Content Include="Content\components\webcomponentsjs\src\WebComponents\build.json" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\chai\bower.json" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\chai\component.json" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\chai\CONTRIBUTING.md" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\chai\History.md" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\chai\package.json" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\chai\README.md" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\chai\ReleaseNotes.md" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\mocha\bower.json" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\mocha\History.md" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\mocha\LICENSE" />
+    <Content Include="Content\components\webcomponentsjs\tests\tools\mocha\Readme.md" />
+    <Content Include="Content\css\Register.less" />
+    <Content Include="Content\css\Invite.less" />
+    <Content Include="Content\css\InviteConfirm.less" />
+    <Content Include="Content\css\zocial-regular-webfont.eot" />
+    <Content Include="Content\css\zocial-regular-webfont.ttf" />
+    <Content Include="Content\css\zocial-regular-webfont.woff" />
+    <Content Include="Content\css\zocial.less" />
+    <Content Include="Content\css\Layout.less" />
+    <None Include="Properties\PublishProfiles\TaskManagement.pubxml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\EmailTemplate\EmailInvite.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Thankyou.cshtml" />
+    <Content Include="Views\GUI\Hook.cshtml" />
+    <Content Include="Views\Debug\AddBoard.cshtml" />
+    <Content Include="Views\Invite\Invite.cshtml" />
+    <Content Include="Views\Invite\InviteConfirmation.cshtml" />
+    <Content Include="Views\Accounts\Upgrade.cshtml" />
+    <Content Include="webapp\components\core-a11y-keys\bower.json" />
+    <Content Include="webapp\components\core-a11y-keys\README.md" />
+    <Content Include="webapp\components\core-component-page\bower.json" />
+    <Content Include="webapp\components\core-component-page\README.md" />
+    <Content Include="webapp\components\core-dropdown-menu\bower.json" />
+    <Content Include="webapp\components\core-dropdown-menu\README.md" />
+    <Content Include="webapp\components\core-dropdown\bower.json" />
+    <Content Include="webapp\components\core-dropdown\README.md" />
+    <Content Include="webapp\components\core-focusable\.bower.json" />
+    <Content Include="webapp\components\core-focusable\bower.json" />
+    <Content Include="webapp\components\core-focusable\README.md" />
+    <Content Include="webapp\components\core-header-panel\.bower.json" />
+    <Content Include="webapp\components\core-header-panel\bower.json" />
+    <Content Include="webapp\components\core-header-panel\README.md" />
+    <Content Include="webapp\components\core-icon-button\.bower.json" />
+    <Content Include="webapp\components\core-icon-button\bower.json" />
+    <Content Include="webapp\components\core-icon-button\README.md" />
+    <Content Include="webapp\components\core-iconset-svg\.bower.json" />
+    <Content Include="webapp\components\core-iconset-svg\bower.json" />
+    <Content Include="webapp\components\core-iconset-svg\README.md" />
+    <Content Include="webapp\components\core-iconset\.bower.json" />
+    <Content Include="webapp\components\core-iconset\bower.json" />
+    <Content Include="webapp\components\core-iconset\README.md" />
+    <Content Include="webapp\components\core-icons\.bower.json" />
+    <Content Include="webapp\components\core-icons\bower.json" />
+    <Content Include="webapp\components\core-icons\README.md" />
+    <Content Include="webapp\components\core-icon\bower.json" />
+    <Content Include="webapp\components\core-icon\README.md" />
+    <Content Include="webapp\components\core-input\bower.json" />
+    <Content Include="webapp\components\core-input\README.md" />
+    <Content Include="webapp\components\core-item\bower.json" />
+    <Content Include="webapp\components\core-item\README.md" />
+    <Content Include="webapp\components\core-menu-button\bower.json" />
+    <Content Include="webapp\components\core-menu-button\README.md" />
+    <Content Include="webapp\components\core-menu\bower.json" />
+    <Content Include="webapp\components\core-menu\README.md" />
+    <Content Include="webapp\components\core-meta\.bower.json" />
+    <Content Include="webapp\components\core-meta\bower.json" />
+    <Content Include="webapp\components\core-meta\README.md" />
+    <Content Include="webapp\components\core-range\bower.json" />
+    <Content Include="webapp\components\core-range\README.md" />
+    <Content Include="webapp\components\core-selection\.bower.json" />
+    <Content Include="webapp\components\core-selection\bower.json" />
+    <Content Include="webapp\components\core-selection\README.md" />
+    <Content Include="webapp\components\core-selector\.bower.json" />
+    <Content Include="webapp\components\core-selector\.gitignore" />
+    <Content Include="webapp\components\core-selector\bower.json" />
+    <Content Include="webapp\components\core-selector\README.md" />
+    <Content Include="webapp\components\core-style\bower.json" />
+    <Content Include="webapp\components\core-style\README.md" />
+    <Content Include="webapp\components\core-toolbar\.bower.json" />
+    <Content Include="webapp\components\core-toolbar\bower.json" />
+    <Content Include="webapp\components\core-toolbar\README.md" />
+    <Content Include="webapp\components\NodeBind\bower.json" />
+    <Content Include="Views\Home\About.cshtml" />
+    <None Include="webapp\components\NodeBind\codereview.settings" />
+    <Content Include="webapp\components\NodeBind\package.json" />
+    <Content Include="webapp\components\NodeBind\README.md" />
+    <Content Include="webapp\components\observe-js\AUTHORS" />
+    <Content Include="webapp\components\observe-js\bower.json" />
+    <None Include="webapp\components\observe-js\codereview.settings" />
+    <Content Include="webapp\components\observe-js\package.json" />
+    <Content Include="webapp\components\observe-js\README.md" />
+    <Content Include="webapp\components\paper-button\.bower.json" />
+    <Content Include="webapp\components\paper-button\bower.json" />
+    <Content Include="webapp\components\paper-button\README.md" />
+    <Content Include="webapp\components\paper-checkbox\bower.json" />
+    <Content Include="webapp\components\paper-checkbox\README.md" />
+    <Content Include="webapp\components\paper-dialog\bower.json" />
+    <Content Include="webapp\components\paper-dialog\README.md" />
+    <Content Include="webapp\components\paper-fab\bower.json" />
+    <Content Include="webapp\components\paper-fab\README.md" />
+    <Content Include="webapp\components\paper-icon-button\.bower.json" />
+    <Content Include="webapp\components\paper-icon-button\bower.json" />
+    <Content Include="webapp\components\paper-icon-button\README.md" />
+    <Content Include="webapp\components\paper-input\bower.json" />
+    <Content Include="webapp\components\paper-input\README.md" />
+    <Content Include="webapp\components\paper-progress\bower.json" />
+    <Content Include="webapp\components\paper-progress\README.md" />
+    <Content Include="webapp\components\paper-radio-button\bower.json" />
+    <Content Include="webapp\components\paper-radio-button\README.md" />
+    <Content Include="webapp\components\paper-radio-group\bower.json" />
+    <Content Include="webapp\components\paper-radio-group\README.md" />
+    <Content Include="webapp\components\paper-ripple\.bower.json" />
+    <Content Include="webapp\components\paper-ripple\bower.json" />
+    <Content Include="webapp\components\paper-ripple\README.md" />
+    <Content Include="webapp\components\paper-shadow\.bower.json" />
+    <Content Include="webapp\components\paper-shadow\bower.json" />
+    <Content Include="webapp\components\paper-shadow\README.md" />
+    <Content Include="webapp\components\paper-slider\bower.json" />
+    <Content Include="webapp\components\paper-slider\README.md" />
+    <Content Include="webapp\components\polymer-expressions\bower.json" />
+    <Content Include="webapp\components\polymer-expressions\build.json" />
+    <None Include="webapp\components\polymer-expressions\codereview.settings" />
+    <Content Include="webapp\components\polymer-expressions\package.json" />
+    <Content Include="webapp\components\polymer-expressions\README.md" />
+    <Content Include="webapp\components\polymer-expressions\third_party\esprima\CONTRIBUTING.md" />
+    <Content Include="webapp\components\polymer-expressions\third_party\esprima\LICENSE.BSD" />
+    <Content Include="webapp\components\polymer-expressions\third_party\esprima\README.md" />
+    <Content Include="webapp\components\polymer-gestures\bower.json" />
+    <Content Include="webapp\components\polymer-gestures\build.json" />
+    <Content Include="webapp\components\polymer-gestures\package.json" />
+    <Content Include="webapp\components\polymer-gestures\README.md" />
+    <Content Include="webapp\components\polymer\bower.json" />
+    <Content Include="webapp\components\polymer\build.bat" />
+    <Content Include="webapp\components\polymer\build.json" />
+    <None Include="webapp\components\polymer\codereview.settings" />
+    <Content Include="webapp\components\polymer\docs.json" />
+    <Content Include="webapp\components\polymer\package.json" />
+    <Content Include="webapp\components\polymer\README.md" />
+    <Content Include="webapp\components\TemplateBinding\bower.json" />
+    <Content Include="webapp\components\TemplateBinding\build.json" />
+    <None Include="webapp\components\TemplateBinding\codereview.settings" />
+    <Content Include="webapp\components\TemplateBinding\package.json" />
+    <Content Include="webapp\components\TemplateBinding\README.md" />
+    <Content Include="webapp\components\TemplateBinding\template-instantiation.md" />
+    <Content Include="webapp\components\webcomponentsjs\bower.json" />
+    <Content Include="webapp\components\webcomponentsjs\CONTRIBUTING.md" />
+    <Content Include="webapp\components\webcomponentsjs\package.json" />
+    <Content Include="webapp\components\webcomponentsjs\README.md" />
+    <Content Include="webapp\components\webcomponentsjs\src\CustomElements\build.json" />
+    <Content Include="webapp\components\webcomponentsjs\src\HTMLImports\build.json" />
+    <Content Include="webapp\components\webcomponentsjs\src\ShadowDOM\build.json" />
+    <Content Include="webapp\components\webcomponentsjs\src\WebComponents\build-lite.json" />
+    <Content Include="webapp\components\webcomponentsjs\src\WebComponents\build.json" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\chai\bower.json" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\chai\component.json" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\chai\CONTRIBUTING.md" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\chai\History.md" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\chai\package.json" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\chai\README.md" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\chai\ReleaseNotes.md" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\mocha\bower.json" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\mocha\History.md" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\mocha\LICENSE" />
+    <Content Include="webapp\components\webcomponentsjs\tests\tools\mocha\Readme.md" />
+    <Content Include="webapp\css\default.less" />
+    <Content Include="webapp\css\sioux.less" />
+    <Content Include="webapp\css\src\account-info.less" />
+    <Content Include="webapp\css\src\board.less" />
+    <Content Include="webapp\css\src\bootstrap.min.less" />
+    <Content Include="webapp\css\src\card-bot.less" />
+    <Content Include="webapp\css\src\card-top.less" />
+    <Content Include="webapp\css\src\card.less" />
+    <Content Include="webapp\css\src\column-setting.less" />
+    <Content Include="webapp\css\src\column.less" />
+    <Content Include="webapp\css\src\header.less" />
+    <Content Include="webapp\css\src\helper-wrapper.less" />
+    <Content Include="webapp\css\src\install-column-panel.less" />
+    <Content Include="webapp\css\src\jquery-ui.less" />
+    <Content Include="webapp\css\src\layout.less" />
+    <Content Include="webapp\css\src\main-content.less" />
+    <Content Include="webapp\css\src\main.less" />
+    <Content Include="webapp\css\src\modal-popup.less" />
+    <Content Include="webapp\css\src\right-panel.less" />
+    <Content Include="webapp\css\src\scroll.less" />
+    <Content Include="webapp\css\src\sidebar.less" />
+    <Content Include="webapp\css\src\style.less" />
+    <Content Include="webapp\css\src\task.less" />
+    <Content Include="webapp\css\src\card.style2.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\components\observe-js\benchmark\chartjs\" />
+    <Folder Include="webapp\components\observe-js\benchmark\chartjs\" />
+    <Folder Include="webapp\font\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{e4c60828-84c7-4089-8ae5-fa67b0c7d31d}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SqlServerStorage\SqlServerStorage.csproj">
+      <Project>{69c269e2-b63f-46f9-a36e-2ae48561acf4}</Project>
+      <Name>SqlServerStorage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>38716</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:34003/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

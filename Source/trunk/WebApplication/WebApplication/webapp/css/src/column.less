@@ -1,0 +1,64 @@
+﻿
+.column-wrapper {
+	position: relative;
+	background: @columnBgColor;
+	box-sizing: border-box;
+	min-width: @columnMinWidth;
+	max-height: @columnMaxHeight;
+	box-shadow: 1px 2px 5px @shadowColor;
+	margin: 20px 10px 20px 10px;
+	border-radius: 2%;
+	height: 100%;
+	padding: 10px 0px 10px 5px;
+}
+
+.column-name {
+	float: left;
+	margin-top: 5px;
+	background: @columnBgColor;
+	border: 0px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.column-content {
+	height: 100%;
+	max-height: @columnContainMaxHeight;
+	width: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+	padding-right: 0px;
+	padding-bottom: 10px;
+}
+
+.ui-sortable-helper.column {
+    /* Rotate column */
+    -ms-transform: rotate(1deg); /* IE 9 */
+    -webkit-transform: rotate(1deg); /* Chrome, Safari, Opera */
+    transform: rotate(1deg);
+	cursor:e-resize;
+}
+
+.ui-sortable-helper .column-content {
+	height: auto;
+}
+
+#column-action {
+	float: right;
+}
+
+.column-footer {
+	margin-top: 10px;
+
+	.add-card-input {
+	margin-left: 5px;
+	width: 95%;
+	padding: 5px;
+	background: #fff;
+	border-radius: 3%;
+}
+}
+
+.dropdown.open {
+	float: right;
+}

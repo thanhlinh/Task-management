@@ -1,0 +1,215 @@
+﻿<!Doctype html>
+<html>
+<head>
+	<script src="components/webcomponentsjs/webcomponents.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="import" href="components/core-toolbar/core-toolbar.html">
+	<link rel="import" href="components/core-header-panel/core-header-panel.html">
+	<link rel="import" href="components/core-icons/core-icons.html">
+	<link rel="import" href="components/core-icons/editor-icons.html">
+	<link rel="import" href="components/core-icons/communication-icons.html">
+	<link rel="import" href="components/core-icons/social-icons.html">
+	<link rel="import" href="components/core-icon-button/core-icon-button.html">
+	<link rel="import" href="components/core-icons/av-icons.html">
+	<link rel="import" href="components/core-menu/core-menu.html">
+	<link rel="import" href="components/core-dropdown-menu/core-dropdown-menu.html">
+	<link rel="import" href="components/core-item/core-item.html">
+	<link rel="import" href="components/paper-icon-button/paper-icon-button.html">
+	<link rel="import" href="components/paper-button/paper-button.html">
+	<link rel="import" href="components/paper-shadow/paper-shadow.html">
+	<link rel="import" href="components/paper-input/paper-input.html">
+	<link rel="import" href="components/paper-button/paper-button.html">
+	<link rel="import" href="components/paper-shadow/paper-shadow.html">
+	<link rel="import" href="components/paper-input/paper-input.html">
+	<link rel="import" href="components/paper-input/paper-autogrow-textarea.html">
+	<link rel="import" href="components/paper-input/paper-input-decorator.html">
+	<link rel="import" href="components/paper-button/paper-button.html">
+	<link rel="import" href="components/paper-fab/paper-fab.html">
+	<link rel="import" href="components/paper-slider/paper-slider.html">
+	<link rel="import" href="components/paper-progress/paper-progress.html">
+	<link rel="import" href="components/paper-checkbox/paper-checkbox.html">
+
+	<!-- START CSS -->
+	<link id="main-style-link" rel="stylesheet" type="text/less" href="css/default.less">
+	<!-- END CSS -->
+	
+	<!-- START SCRIPT -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="config.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="js/Pageload.js"></script>
+	<script type="text/javascript" src="js/Account.index.js"></script>
+	<script type="text/javascript" src="js/Board.js"></script>
+	<script type="text/javascript" src="js/Board.ui.js"></script>
+	<script type="text/javascript" src="js/Board.index.js"></script>
+	<script type="text/javascript" src="js/Column.js"></script>
+	<script type="text/javascript" src="js/Column.ui.js"></script>
+	<script type="text/javascript" src="js/Column.index.js"></script>
+	<script type="text/javascript" src="js/Card.js"></script>
+	<script type="text/javascript" src="js/Card.ui.js"></script>
+	<script type="text/javascript" src="js/Card.index.js"></script>
+	<script type="text/javascript" src="js/ColumnSetting.js"></script>
+	<script type="text/javascript" src="js/ColumnSetting.ui.js"></script>
+	<script type="text/javascript" src="js/ColumnSetting.index.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<!-- END SCRIPT -->
+
+	<!-- START REMOVE -->
+	<script type="text/javascript" src="js/less.min.js"></script>
+	<!-- END REMOVE -->
+</head>
+<body fullbleed vertical layout unresolved>
+	<div id="wrapper" horizontal layout>
+		<core-toolbar id="header">
+			<paper-icon-button id="menu-toggle" icon="menu"></paper-icon-button>
+			<input flex class="text-center boardname" id="title" value="Task Management"></input>
+			<paper-icon-button id="timer" icon="alarm"></paper-icon-button>
+			<paper-icon-button id="search" icon="search"></paper-icon-button>
+			<div class="pull-right">
+				<paper-icon-button id="more-option" class="dropdown-toggle" data-toggle="dropdown" icon="more-vert"></paper-icon-button>
+				<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu">
+					<li><a id="show-dialog-columnSetting" href="#">Column Setting</a></li>
+					<li><a href="#">Delete Board</a></li>
+				</ul>
+			</div>
+			<paper-icon-button id="slide-helper" class="active" icon="arrow-forward"></paper-icon-button>
+		</core-toolbar>
+
+		<div id="sidebar">
+			<div id="account">
+				<paper-icon-button class="account-icon" icon="account-box"></paper-icon-button>
+				<img class="uavatar" />
+				<div class="account-info">
+					<div class="uinfo">
+						<span class="uname"></span>
+						<br />
+						<span class="umail"></span>
+					</div>
+					<paper-icon-button class="show-gb-loged" icon="expand-more"></paper-icon-button>
+				</div>
+				<paper-button class="login-btn text-center">Login</paper-button>
+			</div>
+			<div id="gb_loged">
+				<button type="button" class="view-detail-info btn btn-default">Account Info</button>
+				<button type="button" class="logout-btn btn btn-default">Logout</button>
+			</div>
+			<div id="my-team">
+				<div class="my-team-title">
+					<core-icon class="my-team-icon" icon="social:group"></core-icon>
+					<span class="my-team-title-text">Team</span>
+					<button type="button" class="upgrade-btn btn btn-danger">Upgrade</button>
+				</div>
+				<div class="my-team-content">
+					<ul class="my-team-list"></ul>
+				</div>
+			</div>
+			<div id="private-board">
+				<div class="private-board-title">
+					<core-icon class="private-board-icon" icon="dashboard"></core-icon>
+					<span class="private-board-title-text">Private board</span>
+					<paper-icon-button class="show-all-board show-board" icon="expand-less"></paper-icon-button>
+				</div>
+				<div class="private-board-content">
+					<ul class="private-board-list"></ul>
+				</div>
+			</div>
+			<paper-button class="create-board-btn text-center">Create New Board</paper-button>
+		</div>
+		<div id="content">
+		</div>
+		<div id="helper-wrapper" class="active">
+			<div id="helper">
+				<div id="add-column">
+					<paper-icon-button class="add-column-icon" icon="add-box"></paper-icon-button>
+					<paper-input class="add-column-input" label="Add a column"></paper-input>
+				</div>
+				<div id="board-info">
+				</div>
+			</div>
+			<div id="adv">
+				<button type="button" class="send-invite-btn btn btn-primary">Send Invite</button>
+			</div>
+			<div id="theme">
+				<div class="default-theme theme-item" name="default"></div>
+				<div class="sioux-theme theme-item" name="sioux"></div>
+			</div>
+			<div id="language-container">
+				<core-icon class="language-icon" icon="language"></core-icon>
+				<select id="language">
+					<option class="en-language">English</option>
+					<option class="vi-language">Tiếng Việt</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div id="hide-div" style="display: none">
+		<div id="dialog-columnSetting" style="display:none" title="Column Setting">
+			<div class="dialog">
+			</div>
+		</div>
+		<div id="notification-dialog" title="Notification">
+			<div class="dialog-content">
+			</div>
+		</div>
+		<div id="install-column-panel">
+			<div class="install-board-description">
+				<img class="create-board-icon" src="./images/scrum-icon.png" />
+				<div class="create-board-description">
+					<span>
+						A Scrum board is a board that was created using the "Scrum" preset.<br />
+						Scrum boards are for teams that plan their work in sprints.<br />
+						A Scrum board is visible in both Plan mode and Work mode.
+					</span>
+				</div>
+				<paper-button id="install-scrum-board">Install Now</paper-button>
+			</div>
+			<br />
+			<div class="install-board-description">
+				<img class="create-board-icon" src="./images/issue-icon.png" />
+				<div class="create-board-description">
+					<span>Create issue board for follow your work</span>
+				</div>
+				<paper-button id="install-issue-board">Install Now</paper-button>
+			</div>
+			<br />
+			<div class="install-board-description">
+				<img class="create-board-icon" src="./images/custom-icon.png" />
+				<div class="create-board-description">
+					<span>Create your board with anthing you want</span>
+				</div>
+				<paper-button id="install-custom-board">Install Now</paper-button>
+			</div>
+		</div>
+	</div>
+	<div class="wait-ajax">
+		<img src='/images/ajax-loader.gif' width="54" height="55" />
+	</div>
+	<div id="modal" style="display: none"></div>
+	<div id="sent-invite" style="display: none">
+		<core-icon class="close-send-invite" icon="close"></core-icon>
+		<form>
+			<span>Send invite</span>
+			<div class="name-invite">
+				<paper-input class="first-name-invite" label="First Name"></paper-input>
+				<paper-input class="last-name-invite" label="Last Name"></paper-input>
+			</div>
+			<paper-input type="email" required class="email-invite" label="Email address"></paper-input>
+			<span class="email-error-message"></span>
+			<paper-input-decorator class="description" label="Invitation content" layout="" vertical="">
+				<textarea></textarea>
+			</paper-input-decorator>
+			<div center horizontal>
+				<paper-fab type="submit" icon="check" class="submit-invite"></paper-fab>
+			</div>
+		</form>
+	</div>
+	<div id="notification" style="display: none">
+		<span class="notification-content"></span>
+		<br />
+		<button type="button" class="notification-btn btn btn-info">Ok</button>
+	</div>
+	
+</body>
+</html>

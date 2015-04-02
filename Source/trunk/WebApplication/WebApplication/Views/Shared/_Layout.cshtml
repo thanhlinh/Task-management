@@ -1,0 +1,89 @@
+﻿@{
+	if (Request.IsAuthenticated)
+	{
+		Response.Redirect("http://localhost:34003/webapp");
+	}
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Sioux TaskManagement</title>
+	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<meta name="viewport" content="width=device-width" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+	<link rel="stylesheet" href="~/Content/css/bootswatch.min.css">
+	<link rel="stylesheet" type="text/less" href="~/Content/css/Layout.less">
+
+	<script type="text/javascript" src="~/Scripts/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="~/Scripts/Layout.js"></script>
+	<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body fullbleed vertical layout unresolved>
+	<div id="wrapper" horizontal layout>
+		<nav class="navbar navbar-default navbar-fixed-top header-wrapper" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="../" class="navbar-brand logo" style="font-family: 'Comic Sans MS'">Task Management</a>
+					<button class="navbar-toggle" id="btn-toggle" type="button" data-toggle="collapse" data-target="#header-main" data-parent="#header-wrapper">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="header-main">
+					<ul class="nav navbar-nav menu">
+						<li>
+							<a href="" id="help-link">Help</a>
+						</li>
+						<li>
+							<a href="/home/about" id="about-link">About</a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="/login/login" class="btn btn-danger" id="btnLogin" title="">Login</a>
+						</li>
+						<li>
+							<a href="/login/register" class="btn btn-primary" id="btnRegister" title="">Register</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="content-wrapper">
+			<div class="container">
+				@RenderSection("featured", required: false)
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contact-footer" >
+						<a href="" id="feedback-link">Feedback</a> | <a href="" id="contact-link">Contact with us</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 team-footer">
+						<h3><b>Tony's Team</b></h3>
+						<p>Engineer: Phan Hoang Nhat</p>
+						<p>Intern: Phan Quang Huy</p>
+						<p>Intern: Phung Thanh Linh</p>
+					</div>
+					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 announce-footer">
+						<h3><b>Sioux. Source of your Technology</b></h3>
+						<h6>Technical Software | Mechatronics | Electronics | Industrial Mathematics | Remote Solutions</h6>
+						<p>Sioux Embedded Systems Ltd. I 07-09 Tran Quoc Toan I Danang I Vietnam</p>
+						<p>M (vn) +84 (0) 905333685 I M (nl) +31 (0) 621997722 I T +84 (0) 511-3888756 I <a href="#">huy.nguyen@sioux.asia</a> I <a href="www.sioux.asia">www.sioux.asia</a> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

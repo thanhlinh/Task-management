@@ -1,0 +1,40 @@
+{
+	//Required
+    "name": "Board",
+    "manifest_version": 2,
+    "version"          : "1.0",
+    "default_locale"   : "en",
+	
+	//Recomended
+	"description": "The my board of project",
+	"icons": {
+	   "default_icon": "icon.png"
+	},
+
+	//Pick one
+	"browser_action": {
+		"default_icon" : "icon.png",
+		"default_title" : "Board Project",
+		"default_popup": "popup.html"   
+	},
+
+	//Optional
+	"author" : "Huy Phan",
+	"background" : {
+		"scripts" : [
+			"js/background.js"
+		]
+	},
+	"chrome_url_overrides" : {
+		"newtab" : "index.html"
+	},
+
+	"permissions": [
+				"tabs",
+				"http://*/*",
+				"https://*/*",
+				"webRequest",
+				"webRequestBlocking"
+	],
+	"content_security_policy": "script-src http://localhost:8080 'self' 'unsafe-eval'; object-src 'self'"
+}

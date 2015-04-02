@@ -1,0 +1,87 @@
+﻿@using Sioux.TaskManagement;
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Register</title>
+
+	<script src="~/Content/components/webcomponentsjs/webcomponents.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+
+	<link rel="import" href="~/Content/components/core-header-panel/core-header-panel.html">
+	<link rel="import" href="~/Content/components/paper-input/paper-input.html">
+	<link rel="import" href="~/Content/components/paper-input/paper-input-decorator.html">
+	<link rel="import" href="~/Content/components/paper-button/paper-button.html">
+	<link rel="import" href="~/Content/components/paper-checkbox/paper-checkbox.html">
+
+	<link rel="stylesheet" type="text/less" href="~/Content/css/InviteConfirm.less">
+
+	<script type="text/javascript">
+		var ThankyoupageRedirect = "@Html.Raw(MagicUrl.ThankYouPage())";
+		var LoginRedirect = "@Html.Raw(MagicUrl.LoginPage())";
+	</script>
+
+	<script type="text/javascript" src="~/Scripts/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="~/Scripts/InviteConfirm.js"></script>
+</head>
+<body fullbleed vertical layout unresolved>
+	<div class="wrapper">
+		<div class="top-wrapper">
+			<div class="logo-content">
+				<h3>Compelete Registration</h3>
+			</div>
+			<div class="button-login">
+				<paper-button id="loginSubmit" raised="" class="" role="button" tabindex="0">Log in</paper-button>
+			</div>
+		</div>
+		<paper-shadow class="main-wrapper" z="1">
+			<span id="inviteconfirm_error"></span>
+			<paper-input-decorator label="Email" layout="" vertical="">
+				<input id="email-input" is="core-input" placeholder="with core-input" aria-label="with core-input"
+					   value="@ViewBag.Email" disabled>
+			</paper-input-decorator>
+			<br />
+			<div class="name">
+				<div class="firstname">
+					<paper-input-decorator label="First name" layout="" vertical="">
+						<input id="first-name" is="core-input" placeholder="with core-input" aria-label="with core-input"
+							   value="@ViewBag.FirstName">
+					</paper-input-decorator>
+					<span id="firstname_error"></span>
+				</div>
+				<div class="lastname">
+					<paper-input-decorator label="Last name" layout="" vertical="">
+						<input id="last-name" is="core-input" placeholder="with core-input" aria-label="with core-input"
+							   value="@ViewBag.LastName">
+					</paper-input-decorator>
+					<span id="lastname_error"></span>
+				</div>
+			</div>
+			<paper-input-decorator label="Password" layout="" vertical="">
+				<input id="password-input" type="password" is=core-input" placeholder="with core-input" aria-label="with core-input">
+			</paper-input-decorator>
+			<span id="password_error"></span>
+			<paper-input-decorator label="Confirm password" layout="" vertical="">
+				<input id="repassword-input" type="password" is=core-input" placeholder="with core-input" aria-label="with core-input">
+			</paper-input-decorator>
+			<span id="repassword_error"></span>
+			<br />
+			<paper-button id="submit" raised="" class="" role="button" tabindex="0">Accept</paper-button>
+			<br />
+			<div id="term-content">
+				<p>Yes, I have read and I accept the <a href="#">Terms of Use</a> and the <a href="#">Privacy Statement</a></p>
+			</div>
+		</paper-shadow>
+		<div class="bottom-wrapper">
+		</div>
+	</div>
+</body>
+</html>
+

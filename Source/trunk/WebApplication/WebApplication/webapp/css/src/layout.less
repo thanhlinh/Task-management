@@ -1,0 +1,38 @@
+﻿
+#wrapper {
+	height: 100%;
+	overflow: hidden;
+}
+
+#header {
+	position: fixed;
+	width: 100%;
+	background-color: @headerBgColor;
+	color: @headerColor;
+	.header-style()
+}
+
+#sidebar {
+	height: 100%;
+	background-color: @sidebarBgColor;
+	padding: @headerHeight+0 0 @gutterWidth 0;
+	.sidebar-style()
+}
+
+#helper-wrapper {
+	height: 100%;
+	background-color: @helperBgColor;
+	padding: @headerHeight+@gutterWidth @gutterWidth @gutterWidth @gutterWidth;
+	.helper-wrapper-style();
+}
+
+#content {
+	height: 100%;
+	width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: @headerHeight+@gutterWidth @gutterWidth @gutterWidth @gutterWidth;
+	background-color: @bgColor;
+	color: @contentColor;
+	.content-style();
+}
